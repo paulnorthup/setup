@@ -93,6 +93,9 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 endif
 colors zenburn
 
+"SESSIONS
+let g:session_directory = "~/.vimsessions"
+
 "PROJECTS
 let g:project_enable_welcome = 1
 let g:project_use_nerdtree = 1
