@@ -16,3 +16,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = git@github.com:sjl/gundo.vim.git
+[submodule "vim/bundle/indentline"]
+	path = vim/bundle/indentline
+	url = git@github.com:Yggdroot/indentLine.git
