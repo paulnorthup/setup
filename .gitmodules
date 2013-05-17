@@ -1,3 +1,9 @@
 [submodule "vim/bundle/CoVim"]
 	path = vim/bundle/CoVim
 	url = git@github.com:FredKSchott/CoVim.git
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule "vim/bundle/ag"]
+	path = vim/bundle/ag
+	url = git@github.com:rking/ag.vim.git
