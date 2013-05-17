@@ -44,3 +44,9 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = git@github.com:Lokaltog/vim-powerline.git
+[submodule "vim/bundle/vim-project"]
+	path = vim/bundle/vim-project
+	url = https://github.com/amiorin/vim-project
+[submodule "vim/bundle/vim-session"]
+	path = vim/bundle/vim-session
+	url = git@github.com:xolox/vim-session.git

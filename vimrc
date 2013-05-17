@@ -93,4 +93,12 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 endif
 colors zenburn
 
-let g:startify_session_dir = '~/.vim/session'
+"PROJECTS
+let g:project_enable_welcome = 1
+let g:project_use_nerdtree = 1
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/projects")
+
+Project   'drupal/startupinstitute', 'SI Drupal'
+Project   'drupal/startupinstitute/sites/all/themes/startup-institute', 'SI Theme'
+Project   'python/startupinstitute.com', 'SI Python'
