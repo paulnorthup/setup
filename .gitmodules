@@ -7,3 +7,6 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = git@github.com:rking/ag.vim.git
+[submodule "vim/bundle/closetag"]
+	path = vim/bundle/closetag
+	url = git@github.com:vim-scripts/closetag.vim.git
