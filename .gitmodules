@@ -19,3 +19,27 @@
 [submodule "vim/bundle/indentline"]
 	path = vim/bundle/indentline
 	url = git@github.com:Yggdroot/indentLine.git
+[submodule "nerdtree"]
+	path = nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = git@github.com:Lokaltog/powerline.git
+[submodule "vim/bundle/showmarks"]
+	path = vim/bundle/showmarks
+	url = git@github.com:vim-scripts/ShowMarks.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "vim/bundle/yacom"]
+	path = vim/bundle/yacom
+	url = git@github.com:gokcehan/vim-yacom.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
