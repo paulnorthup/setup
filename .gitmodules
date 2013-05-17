@@ -25,9 +25,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = git@github.com:Lokaltog/powerline.git
 [submodule "vim/bundle/showmarks"]
 	path = vim/bundle/showmarks
   url = git@github.com:vim-scripts/ShowMarks.git
@@ -44,3 +41,6 @@
 [submodule "vim/bundle/align"]
 	path = vim/bundle/align
 	url = git@github.com:vim-scripts/Align.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = git@github.com:Lokaltog/vim-powerline.git
