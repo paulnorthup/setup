@@ -27,8 +27,8 @@ au BufRead,BufNewFile *.scss set filetype=scss
 set number
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 "swp and backup
-set dir=~/.vim/tmp
-set backupdir=~/.vim/backups
+set dir=~/.vimtmp
+set backupdir=~/.vimbackups
 "cursor
 set cursorline
 set cursorcolumn
