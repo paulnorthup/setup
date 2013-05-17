@@ -28,7 +28,8 @@ set number
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 "swp and backup
 set dir=~/.vimtmp
-set backupdir=~/.vimbackups
+set backup
+set backupdir=~/.vimbackup
 "cursor
 set cursorline
 set cursorcolumn

@@ -10,4 +10,4 @@ cd ~/dotfiles
 git submodule init
 git submodule update
 echo "Create doc folder for vim-showmarks"
-mkdir p ~/dotfiles/vim/bundle/showmarks/doc
+mkdir -p ~/dotfiles/vim/bundle/showmarks/doc
