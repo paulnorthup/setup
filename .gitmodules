@@ -50,3 +50,6 @@
 [submodule "vim/bundle/vim-session"]
 	path = vim/bundle/vim-session
 	url = git@github.com:xolox/vim-session.git
+[submodule "vim/bundle/vim-markdown-folding"]
+	path = vim/bundle/vim-markdown-folding
+	url = git@github.com:nelstrom/vim-markdown-folding.git
