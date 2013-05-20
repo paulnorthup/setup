@@ -1,6 +1,6 @@
 " ~/dotfiles/vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.3 on 17 May 2013 at 14:54:05.
+" Created by session.vim 2.3 on 20 May 2013 at 10:25:06.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=
@@ -26,28 +26,81 @@ endif
 set shortmess=aoO
 badd +1 ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/sass/_homepages.scss
 badd +1 ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/sass/pages.scss
-badd +0 ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/templates/page--front.tpl.php
+badd +2 ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/templates/page--front.tpl.php
 silent! argdel *
-edit ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/templates/page--front.tpl.php
+edit ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute/sass/_homepages.scss
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 " argglobal
-setlocal fdm=manual
+setlocal fdm=marker
 setlocal fde=0
-setlocal fmr={{{,}}}
+setlocal fmr={,}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+30
+silent! normal! zo
+35
+silent! normal! zo
+41
+silent! normal! zo
+46
+silent! normal! zo
+48
+silent! normal! zo
+50
+silent! normal! zo
+53
+silent! normal! zo
+57
+silent! normal! zo
+61
+silent! normal! zo
+63
+silent! normal! zo
+65
+silent! normal! zo
+68
+silent! normal! zo
+72
+silent! normal! zo
+77
+silent! normal! zo
+79
+silent! normal! zo
+82
+silent! normal! zo
+85
+silent! normal! zo
+91
+silent! normal! zo
+91
+silent! normal! zo
+95
+silent! normal! zo
+97
+silent! normal! zo
+100
+silent! normal! zo
+104
+silent! normal! zo
+95
+silent! normal! zo
+97
+silent! normal! zo
+100
+silent! normal! zo
+104
+silent! normal! zo
+let s:l = 88 - ((27 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+88
+normal! 031|
 lcd ~/projects/drupal/startupinstitute/sites/all/themes/startup-institute
 tabnext 1
 if exists('s:wipebuf')

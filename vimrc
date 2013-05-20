@@ -95,13 +95,10 @@ colors zenburn
 
 "SESSIONS
 let g:session_directory = "~/.vimsessions"
-
-"PROJECTS
-let g:project_enable_welcome = 1
-let g:project_use_nerdtree = 1
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/projects")
-
-Project   'drupal/startupinstitute', 'SI Drupal'
-Project   'drupal/startupinstitute/sites/all/themes/startup-institute', 'SI Theme'
-Project   'python/startupinstitute.com', 'SI Python'
+let g:session_autosave = 'yes'
+let g:session_autosave_periodic = 1
+let g:session_default_to_last = 'yes'
+let g:session_autoload = 'yes'
+nmap <leader>so :OpenSession<CR>
+nmap <leader>ss :SaveSession 
+nmap <leader>sv :ViewSession<CR>
