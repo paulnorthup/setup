@@ -76,8 +76,18 @@ nmap <leader>st :SyntasticToggleMode<CR>
 nmap <leader>sc :SyntasticCheck<CR>
 "Gundo
 map <leader>gut :GundoToggle<CR>
-"Folds for SCSS
-autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+"CloseTag.vim
+if !exists("b:unaryTagsStack") || exists("b:closetag_html_style")
+    if &filetype == "html" || exists("b:closetag_html_style")
+        let b:unaryTagsStacktack="area base br dd dt hr img input link meta param"
+    else " for xml and xsl
+        let b:unaryTagsStack=""
+    endif
+endif
+
+if !exists("b:unaryTagsStack")
+    let b:unaryTagsStack=""
+endif
 
 "CTRL-P
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|css|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
