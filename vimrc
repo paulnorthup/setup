@@ -13,11 +13,6 @@ nmap <leader>]s :source $MYVIMRC<CR>
 set backspace=2
 set splitbelow
 set splitright
-set wrap
-set linebreak
-set nolist  " list disables linebreak
-set showbreak=…
-set tw=80
 "syntax
 syntax on
 filetype plugin on
@@ -46,10 +41,10 @@ nmap k gk
 nmap ; :CtrlPBuffer<CR>
 nmap <leader>bd :Kwbd<CR>
 nmap <leader>vs :vsplit<CR>
-nmap <leader>l <C-W>l
-nmap <leader>h <C-W>h
-nmap <leader>j <C-W>j
-nmap <leader>k <C-W>k
+nmap <C-L> <C-W>l
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
 "ctrlp
 nmap <leader>p :CtrlP .<CR>
 nmap <leader>fp :CtrlPClearCache<CR>
