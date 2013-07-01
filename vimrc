@@ -38,16 +38,21 @@ nmap <Tab> <leader>
 nmap j gj
 nmap k gk
 "buffers
-nmap ; :CtrlPBuffer<CR>
 nmap <leader>bd :Kwbd<CR>
 nmap <leader>vs :vsplit<CR>
+nmap <leader>hs :split<CR>
 nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
-"ctrlp
-nmap <leader>p :CtrlP .<CR>
-nmap <leader>fp :CtrlPClearCache<CR>
+"Unite!
+let g:unite_enable_start_insert=0
+let g:unite_source_history_yank_enable=1
+nnoremap <leader>ff :<C-u>Unite -no-split -start-insert file_rec/async:!<CR>
+"nmap <leader>f :Unite buffer file_rec -no-split<CR>
+nmap <leader>fh :Unite history/yank -no-split<CR>
+nmap <leader>fr :Unite file_mru -no-split<CR>
+nmap <leader>fb :Unite buffer -no-split<CR>
 "registers
 nmap <leader>" :reg<CR>
 "search
