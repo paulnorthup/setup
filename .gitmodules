@@ -7,9 +7,6 @@
 [submodule "vim/bundle/closetag"]
 	path = vim/bundle/closetag
 	url = git@github.com:vim-scripts/closetag.vim.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = git@github.com:sjl/gundo.vim.git
@@ -44,9 +41,6 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = git@github.com:Lokaltog/vim-powerline.git
-[submodule "vim/bundle/vim-project"]
-	path = vim/bundle/vim-project
-	url = https://github.com/amiorin/vim-project
 [submodule "vim/bundle/vim-session"]
 	path = vim/bundle/vim-session
 	url = git@github.com:xolox/vim-session.git
@@ -56,3 +50,6 @@
 [submodule "vim/bundle/matchtag"]
 	path = vim/bundle/matchtag
 	url = git@github.com:gregsexton/MatchTag.git
+[submodule "vim/bundle/unite.vim"]
+	path = vim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim
