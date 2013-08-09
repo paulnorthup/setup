@@ -53,3 +53,9 @@
 [submodule "vim/bundle/unite.vim"]
 	path = vim/bundle/unite.vim
 	url = https://github.com/Shougo/unite.vim
+[submodule "vim/bundle/vim-livereload"]
+	path = vim/bundle/vim-livereload
+	url = git@github.com:flomotlik/vim-livereload.git
+[submodule "vim/bundle/html5.vim"]
+	path = vim/bundle/html5.vim
+	url = git@github.com:othree/html5.vim.git

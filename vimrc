@@ -28,7 +28,6 @@ set backupdir=~/.vimbackup
 "cursor
 set cursorline
 set cursorcolumn
-set colorcolumn=80
 "status bar
 set laststatus=2
 
@@ -46,13 +45,24 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 "Unite!
-let g:unite_enable_start_insert=0
-let g:unite_source_history_yank_enable=1
-nnoremap <leader>ff :<C-u>Unite -no-split -start-insert file_rec/async:!<CR>
-"nmap <leader>f :Unite buffer file_rec -no-split<CR>
-nmap <leader>fh :Unite history/yank -no-split<CR>
-nmap <leader>fr :Unite file_mru -no-split<CR>
-nmap <leader>fb :Unite buffer -no-split<CR>
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>ft :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>ff :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>fr :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>fo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>fy :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap ; :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction
 "registers
 nmap <leader>" :reg<CR>
 "search
@@ -62,7 +72,7 @@ set smartcase
 set hlsearch
 nmap <leader>q :nohlsearch<CR>
 "nerdtree
-nmap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 "tab spacing
 nmap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nmap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
@@ -77,20 +87,11 @@ nmap <leader>sc :SyntasticCheck<CR>
 "Gundo
 map <leader>gut :GundoToggle<CR>
 "CloseTag.vim
-if !exists("b:unaryTagsStack") || exists("b:closetag_html_style")
-    if &filetype == "html" || exists("b:closetag_html_style")
-        let b:unaryTagsStacktack="area base br dd dt hr img input link meta param"
-    else " for xml and xsl
-        let b:unaryTagsStack=""
-    endif
-endif
+let b:unaryTagsStack=""
 
 if !exists("b:unaryTagsStack")
     let b:unaryTagsStack=""
 endif
-
-"CTRL-P
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|css|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 
 "NERDREE
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -109,6 +110,15 @@ let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 let g:session_default_to_last = 'yes'
 let g:session_autoload = 'yes'
-nmap <leader>so :OpenSession<CR>
+nmap <leader>so :OpenSession!<CR>
 nmap <leader>ss :SaveSession 
 nmap <leader>sv :ViewSession<CR>
+
+"RESIZING
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+endif
+
+"PASTE
+set pastetoggle=<leader>p
