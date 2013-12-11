@@ -102,17 +102,7 @@ let NERDTreeWinSize=40
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
-colors zenburn
-
-"SESSIONS
-let g:session_directory = "~/.vimsessions"
-let g:session_autosave = 'yes'
-let g:session_autosave_periodic = 1
-let g:session_default_to_last = 'yes'
-let g:session_autoload = 'yes'
-nmap <leader>so :OpenSession!<CR>
-nmap <leader>ss :SaveSession 
-nmap <leader>sv :ViewSession<CR>
+colors solarized
 
 "RESIZING
 if bufwinnr(1)
