@@ -3,12 +3,10 @@ set nocompatible
 call pathogen#infect('/Users/paul/.drush/vimrc/bundle')
 call pathogen#infect('/Users/paul/.vim/bundle')
 " End of vimrc-install additions.
-"PATHOGEN
-call pathogen#infect()
+"PATHOGEN call pathogen#infect()
 
 "SOURCE
-nmap <leader>]e :e $MYVIMRC<CR>
-nmap <leader>]s :source $MYVIMRC<CR>
+nmap <leader>s :source $MYVIMRC<CR>
 "GENERAL
 set backspace=2
 set splitbelow
@@ -44,15 +42,13 @@ nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
-"Unite!
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>ft :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>ff :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>fr :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>fo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>fy :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap ; :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+"tabs
+nmap ] :tabn<CR>
+nmap [ :tabp<CR>
+"CtrlP!
+nmap ; :CtrlPBuffer<CR>
+nmap ' :CtrlP<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
@@ -102,7 +98,7 @@ let NERDTreeWinSize=40
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
-colors solarized
+colors zenburn
 
 "RESIZING
 if bufwinnr(1)
@@ -112,3 +108,33 @@ endif
 
 "PASTE
 set pastetoggle=<leader>p
+
+"VimRoom
+function! ToggleFocusMode()
+  if (&foldcolumn != 12)
+    set laststatus=0
+    set numberwidth=10
+    set foldcolumn=12
+    set noruler
+    set nonumber
+    set nocursorline
+    set nocursorcolumn
+    sign unplace *
+    hi FoldColumn ctermbg=none
+    hi LineNr ctermfg=0 ctermbg=none
+    hi NonText ctermfg=0
+  else
+    set laststatus=2
+    set numberwidth=4
+    set foldcolumn=0
+    set ruler
+    set cursorline
+    set cursorcolumn
+    set number
+    execute 'colorscheme ' . g:colors_name
+  endif
+endfunc
+nnoremap <leader>z :call ToggleFocusMode()<cr>
+
+"PyMode
+let g:pymode_lint_ignore = "E501,W"

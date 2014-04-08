@@ -50,12 +50,27 @@
 [submodule "vim/bundle/matchtag"]
 	path = vim/bundle/matchtag
 	url = git@github.com:gregsexton/MatchTag.git
-[submodule "vim/bundle/unite.vim"]
-	path = vim/bundle/unite.vim
-	url = https://github.com/Shougo/unite.vim
 [submodule "vim/bundle/vim-livereload"]
 	path = vim/bundle/vim-livereload
 	url = git@github.com:flomotlik/vim-livereload.git
 [submodule "vim/bundle/html5.vim"]
 	path = vim/bundle/html5.vim
 	url = git@github.com:othree/html5.vim.git
+[submodule "vim/bundle/goyo"]
+	path = vim/bundle/goyo
+	url = https://github.com/junegunn/goyo.vim
+[submodule "vim/tern-meteor"]
+	path = vim/tern-meteor
+	url = https://github.com/Slava/tern-meteor
+[submodule "tern_for_vim"]
+	path = tern_for_vim
+	url = https://github.com/marijnh/tern_for_vim
+[submodule "vim/bundle/tern"]
+	path = vim/bundle/tern
+	url = https://github.com/marijnh/tern_for_vim
+[submodule "vim/bundle/tern-meteor"]
+	path = vim/bundle/tern-meteor
+	url = https://github.com/Slava/tern-meteor
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
