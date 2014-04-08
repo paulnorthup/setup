@@ -11,3 +11,9 @@ git submodule init
 git submodule update
 echo "Create doc folder for vim-showmarks"
 mkdir -p ~/dotfiles/vim/bundle/showmarks/doc
+echo "Add ZSH config, alias, and prompt"
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/aliases.zsh $ZSH_CUSTOM/aliases.zsh
+ln -s ~/dotfiles/zsh/prompt.zsh $ZSH_CUSTOM/prompt.zsh
+echo "Source the new ZSH config"
+source ~/.zshrc
