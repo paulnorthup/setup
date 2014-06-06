@@ -1,9 +1,6 @@
-" Following lines added by drush vimrc-install on Thu, 09 May 2013 19:47:54 +0000.
 set nocompatible
-call pathogen#infect('/Users/paul/.drush/vimrc/bundle')
-call pathogen#infect('/Users/paul/.vim/bundle')
-" End of vimrc-install additions.
-"PATHOGEN call pathogen#infect()
+execute pathogen#infect()
+syntax enable
 
 "SOURCE
 nmap <leader>s :source $MYVIMRC<CR>
@@ -42,23 +39,11 @@ nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
-"tabs
-nmap ] :tabn<CR>
-nmap [ :tabp<CR>
 "CtrlP!
 nmap ; :CtrlPBuffer<CR>
 nmap ' :CtrlP<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction
 "registers
 nmap <leader>" :reg<CR>
 "search
@@ -95,9 +80,8 @@ let NERDChristmasTree=1
 let NERDTreeWinSize=40
 
 "COLORS
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-  set t_Co=256
-endif
+set t_Co=256
+colorscheme zenburn
 colors zenburn
 
 "RESIZING
@@ -108,33 +92,6 @@ endif
 
 "PASTE
 set pastetoggle=<leader>p
-
-"VimRoom
-function! ToggleFocusMode()
-  if (&foldcolumn != 12)
-    set laststatus=0
-    set numberwidth=10
-    set foldcolumn=12
-    set noruler
-    set nonumber
-    set nocursorline
-    set nocursorcolumn
-    sign unplace *
-    hi FoldColumn ctermbg=none
-    hi LineNr ctermfg=0 ctermbg=none
-    hi NonText ctermfg=0
-  else
-    set laststatus=2
-    set numberwidth=4
-    set foldcolumn=0
-    set ruler
-    set cursorline
-    set cursorcolumn
-    set number
-    execute 'colorscheme ' . g:colors_name
-  endif
-endfunc
-nnoremap <leader>z :call ToggleFocusMode()<cr>
 
 "PyMode
 let g:pymode_lint_ignore = "E501,W"

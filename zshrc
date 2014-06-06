@@ -45,38 +45,9 @@ PATH=$PATH:~/scripts
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Python
-export RACK_ENV=local
-
-# Where startupschool.com code will live (top-level directory for all)
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-
-# Tell virtualenv to use the new hotness: Distribute
-export VIRTUALENV_DISTRIBUTE=true
-export VIRTUALENV_PYTHON=/usr/local/bin/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-
-# Source the virtualenvwrapper startup script
-source /usr/local/bin/virtualenvwrapper.sh
-
-# SI specific
-export DJANGO_DEBUG='ON'
-export DJANGO_APP_APP_SECRET='derpderpderp704i^son7c^tqnxmg%ir%t7z5c8p_69k4wwo^y'
-export DJANGO_SETTINGS_MODULE='settings.local'
-#export DJANGO_LOGGING='ON'
-
-bindkey -v
-
-# Games
-export PATH="/usr/games/bin:$PATH"
-
 fpath=($fpath /usr/local/share/doc/task/scripts/zsh)
 autoload -Uz compinit
 compinit
-
-# Postgres.app in path
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 # bookmarks
 export MARKPATH=$HOME/.marks
@@ -93,20 +64,10 @@ function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
-# add jules' github app key things
-export CLIENT_ID=8eccc151c81fe5593562
-export CLIENT_SECRET=85d12b412aaccbf21bdd79e6c939a777d1751131
-
-# Pelican Sheeeeit
-export DEVLOG_THEME_LOCATION='/Users/paul/projects/devlog_theme'
-
 #Suggestions
 source ~/.zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically
- zle-line-init() {
-     zle autosuggest-start
-     }
 zle -N zle-line-init
 
  # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
@@ -118,5 +79,5 @@ export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=3'
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# The next line updates PATH for the Google Cloud SDK.
-export PATH=$PATH:/Users/paul/google-cloud-sdk/bin
+#MYH Aliases
+alias morning='rake update:env && rake fixtures:challenge'
