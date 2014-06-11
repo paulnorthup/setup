@@ -9,9 +9,21 @@
 # See http://freshshell.com/readme for documentation.
 
 fresh freshshell/fresh bin/fresh --bin
+fresh freshrc --file
 
 # ZSH
 fresh zshrc --file
 
 # VIM
 fresh vimrc --file
+
+# GIT
+fresh jasoncodes/dotfiles config/gitconfig --file
+fresh pengwynn/dotfiles bin/git-pr --bin
+
+# UTILS
+fresh twe4ked/dotfiles bin/gh --bin
+fresh pengwynn/dotfiles bin/git-ci --bin
+fresh pengwynn/dotfiles bin/git-go --bin
+fresh pengwynn/dotfiles bin/termcolors --bin
+fresh jasoncodes/dotfiles bin/timein --bin
