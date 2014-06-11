@@ -19,7 +19,7 @@ Bundle 'othree/html5.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-haml'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'zenburn'
 
 
 call vundle#end()
