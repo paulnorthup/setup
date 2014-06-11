@@ -18,12 +18,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
-# Prompt
-source $ZSH_CUSTOM/prompt.zsh
-
-# Aliases
-source $ZSH_CUSTOM/aliases.zsh
-
 # Customize to your needs...
 export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Users/paul/drush:/Users/paul/.rvm/bin:/usr/local/share/npm/bin:/Users/paul/bin:/usr/local/share/python
 
