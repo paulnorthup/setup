@@ -8,6 +8,7 @@
 #
 # See http://freshshell.com/readme for documentation.
 
+# FRESH
 fresh freshshell/fresh bin/fresh --bin
 fresh freshrc --file
 
@@ -22,7 +23,7 @@ fresh jasoncodes/dotfiles config/gitconfig --file
 fresh pengwynn/dotfiles bin/git-pr --bin
 
 # UTILS
-fresh twe4ked/dotfiles bin/gh --bin
+fresh twe4ked/dotfiles bin/ghu --bin
 fresh pengwynn/dotfiles bin/git-ci --bin
 fresh pengwynn/dotfiles bin/git-go --bin
 fresh pengwynn/dotfiles bin/termcolors --bin
