@@ -6,20 +6,20 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-Plugin 'gmarij/Vundle.vim'
-Plugin 'rking/ag.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-markdown'
-Plugin 'ShowMarks'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'othree/html5.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-haml'
-Plugin 'altercation/vim-colors-solarized'
+Bundle 'gmarij/Vundle.vim'
+Bundle 'rking/ag.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'Yggdroot/indentLine'
+Bundle 'scrooloose/nerdtree'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-markdown'
+Bundle 'ShowMarks'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'othree/html5.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-haml'
+Bundle 'altercation/vim-colors-solarized'
 
 
 call vundle#end()
@@ -106,6 +106,7 @@ let NERDTreeWinSize=40
 
 "COLORS
 set t_Co=256
+set background=dark
 colorscheme zenburn
 
 "RESIZING
