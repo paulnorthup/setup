@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarij/Vundle.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'Yggdroot/indendtLine'
+Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-markdown'
@@ -19,6 +19,7 @@ Plugin 'othree/html5.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-syrround'
 Plugin 'tpope/vim-haml'
+Plugin 'altercation/vim-colors-solarized'
 
 
 call vundle#end()
@@ -106,7 +107,6 @@ let NERDTreeWinSize=40
 "COLORS
 set t_Co=256
 colorscheme zenburn
-colors zenburn
 
 "RESIZING
 if bufwinnr(1)
