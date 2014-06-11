@@ -81,3 +81,155 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #MYH Aliases
 alias morning='rake update:env && rake fixtures:challenge'
+
+## Aliases
+# For Easy Editing
+alias zconf='vim ~/.zshrc && source ~/.zshrc'
+alias bashconf='vim ~/.bash_profile'
+alias sshconf='vim ~/.ssh/config'
+alias vimconf='vim ~/.vimrc'
+force_colored_prompt=yes
+color_prompt=yes
+
+# LS
+alias ll='ls -alp'
+alias ls='ls -G'
+alias sl='sl'
+
+#Eject all disks
+alias eject='osascript -e "tell application \"Finder\" to eject (every disk whose ejectable is true)"'
+
+# Open Apps
+alias shop='open -b com.adobe.Photoshop'
+
+# Git Stuff
+alias gs='git status'
+alias gc='git commit'
+alias gcam='git commit -am'
+alias gp='git push'
+
+#Navigation shortcuts
+alias notes='vim ~/notes'
+
+# Remove spaces and swap with underscores in current directory
+alias rmspaces='rename "s/ /_/g" *'
+
+# Navigation
+alias si='~/projects/startupschool_py'
+alias rampup='~/projects/startupschool_py/rampup'
+alias nyc='~/projects/startupschool_py/newyork'
+alias bos='~/projects/startupschool_py/boston'
+
+# Python
+alias rs='python manage.py runserver'
+alias wo='workon'
+
+# Vmail
+
+# TaskWarrior
+alias taskconf='vim ~/.taskrc'
+alias t='task'
+
+# KeyRemap
+alias kr='/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli'
+
+# Bower
+alias b='bower'
+alias bi='bower install'
+
+## Prompt
+# Global Options
+setopt prompt_subst
+autoload colors zsh/terminfo
+colors
+autoload -U colors && colors # Enable colors in prompt
+
+## Git Stuff
+# Modify the colors and symbols in these variables as desired.
+GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
+GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$reset_color%}"
+GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
+GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
+GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
+GIT_PROMPT_MERGING="%{$fg_bold[magenta]%}⚡︎%{$reset_color%}"
+GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
+GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}●%{$reset_color%}"
+GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
+
+# Show Git branch/tag, or name-rev if on detached head
+parse_git_branch() {
+  (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
+}
+
+# Show different symbols as appropriate for various Git repository states
+parse_git_state() {
+
+  # Compose this value via multiple conditional appends.
+  local GIT_STATE=""
+
+  local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_AHEAD" -gt 0 ]; then
+    GIT_STATE=$GIT_STATE${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}
+  fi
+
+  local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_BEHIND" -gt 0 ]; then
+    GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
+  fi
+
+  local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
+  if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
+  fi
+
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED
+  fi
+
+  if ! git diff --quiet 2> /dev/null; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_MODIFIED
+  fi
+
+  if ! git diff --cached --quiet 2> /dev/null; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_STAGED
+  fi
+
+  if [[ -n $GIT_STATE ]]; then
+    echo "$GIT_PROMPT_PREFIX$GIT_STATE$GIT_PROMPT_SUFFIX"
+  fi
+
+}
+
+# If inside a Git repository, print its branch and state
+git_prompt_string() {
+  local git_where="$(parse_git_branch)"
+  [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
+}
+
+set_prompt() {
+  git_prompt_string() {
+    local git_where="$(parse_git_branch)"
+    [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
+  }
+
+  function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+  }
+
+  myjobs=()
+  for a (${(k)jobstates})
+  {j=$jobstates[$a];i="${${(@s,:,)j}[2]}"
+  myjobs+=($a${i//[^+-]/})}
+  myjobs=${(j:,:)myjobs}
+
+  rehash
+
+  RPS1='$(virtualenv_info) $(git_prompt_string) $myjobs'
+  PS1='
+%{$fg[green]%}%T%} %{$fg[yellow]%}%/
+%{$fg[cyan]%}%c% %{$fg_bold[red]%} ➜ %{$reset_color%}'
+}
+
+precmd () {
+set_prompt
+}
