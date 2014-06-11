@@ -97,6 +97,7 @@ alias eject='osascript -e "tell application \"Finder\" to eject (every disk whos
 alias shop='open -b com.adobe.Photoshop'
 
 # Git Stuff
+$GH_LOGIN = paulnorthup 
 alias gs='git status'
 alias gc='git commit'
 alias gcam='git commit -am'
