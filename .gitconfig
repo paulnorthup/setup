@@ -1,7 +1,0 @@
-[user]
-	name = Paul Northup
-	email = paul.northup@meyouhealth.com
-[push]
-	default = simple
-[core]
-	excludesfile = /Users/paulnorthup/.gitignore_global
