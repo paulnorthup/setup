@@ -1,5 +1,29 @@
 set nocompatible
-execute pathogen#infect()
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+Plugin 'gmarij/Vundle.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sjl/gundo.vim'
+PLugin 'Yggdroot/indendtLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-markdown'
+Plugin 'ShowMarks'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'othree/html5.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-syrround'
+PLugin 'tpope/vim-haml'
+
+
+call vundle#end()
+filetype plugin indent on
+
 syntax enable
 
 "SOURCE
