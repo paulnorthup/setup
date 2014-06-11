@@ -17,7 +17,7 @@ Plugin 'ShowMarks'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'othree/html5.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-syrround'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'altercation/vim-colors-solarized'
 
