@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarij/Vundle.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/gundo.vim'
-PLugin 'Yggdroot/indendtLine'
+Plugin 'Yggdroot/indendtLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-markdown'
@@ -18,7 +18,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'othree/html5.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-syrround'
-PLugin 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 
 
 call vundle#end()
