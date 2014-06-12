@@ -115,6 +115,9 @@ alias rampup='~/projects/startupschool_py/rampup'
 alias nyc='~/projects/startupschool_py/newyork'
 alias bos='~/projects/startupschool_py/boston'
 
+# PS Aux
+alias psag='ps aux | grep'
+
 # Python
 alias rs='python manage.py runserver'
 alias wo='workon'
