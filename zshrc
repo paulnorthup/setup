@@ -74,7 +74,10 @@ export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=3'
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #MYH Aliases
-alias morning='rake update:env && rake fixtures:challenge'
+alias morning='bundle install && rake update:env && rake fixtures:challenge'
+alias dcp='cd ~/code/dcp'
+alias dcm='cd ~/code/dcm'
+alias wbt='cd ~/code/wbt'
 
 ## Aliases
 # For Easy Editing
@@ -97,7 +100,6 @@ alias eject='osascript -e "tell application \"Finder\" to eject (every disk whos
 alias shop='open -b com.adobe.Photoshop'
 
 # Git Stuff
-GH_LOGIN = paulnorthup 
 alias gs='git status'
 alias gc='git commit'
 alias gcam='git commit -am'
