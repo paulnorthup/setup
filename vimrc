@@ -19,6 +19,7 @@ Bundle 'othree/html5.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-haml'
+Bundle 'rgarver/Kwbd.vim'
 Bundle 'zenburn'
 
 
