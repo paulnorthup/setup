@@ -118,6 +118,3 @@ endif
 
 "PASTE
 set pastetoggle=<leader>p
-
-"PyMode
-let g:pymode_lint_ignore = "E501,W"
