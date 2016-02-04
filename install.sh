@@ -8,8 +8,10 @@ mkdir -p ~/.vimtmp
 echo "Create a backup folder at ~/.vimbackup"
 mkdir -p ~/.vimbackup
 echo "Create symlinks for .vim and .vimrc"
-ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/vim ~/.vim/
 ln -s ~/.dotfiles/vimrc ~/.vimrc
+echo "Pull the latest Vundle"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/bundle/Vundle.vim
 echo "Pull vim plugins from respective repos"
 echo "Add ZSH config, alias, and prompt"
 rm ~/.zshrc
