@@ -1,26 +1,28 @@
 set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.dotfiles/bundle/Vundle.vim
+call vundle#begin('~/.dotfiles/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-Bundle 'gmarij/Vundle.vim'
-Bundle 'rking/ag.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'Yggdroot/indentLine'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-markdown'
-Bundle 'ShowMarks'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'othree/html5.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-haml'
-Bundle 'rgarver/Kwbd.vim'
-Bundle 'zenburn'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" My plugins
+Plugin 'rking/ag.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-markdown'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'othree/html5.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-haml'
+Plugin 'rgarver/Kwbd.vim'
+Plugin 'zenburn'
 
 
 call vundle#end()
