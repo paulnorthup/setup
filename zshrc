@@ -95,6 +95,7 @@ alias shop='open -b com.adobe.Photoshop'
 
 # Rails
 alias rs='rails server'
+alias rc='rails console'
 
 #Docker
 alias dc='docker-compose'
