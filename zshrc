@@ -70,12 +70,6 @@ export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=3'
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-#MYH Aliases
-alias morning='bundle install && rake update:env && rake fixtures:challenge'
-alias dcp='cd ~/code/dcp'
-alias dcm='cd ~/code/dcm'
-alias wbt='cd ~/code/wbt'
-
 ## Aliases
 # For Easy Editing
 alias zconf='vim ~/.zshrc && source ~/.zshrc'
@@ -84,6 +78,9 @@ alias sshconf='vim ~/.ssh/config'
 alias vimconf='vim ~/.vimrc'
 force_colored_prompt=yes
 color_prompt=yes
+
+# Navigation
+alias code='cd ~/code'
 
 # LS
 alias ll='ls -alp'
@@ -95,6 +92,14 @@ alias eject='osascript -e "tell application \"Finder\" to eject (every disk whos
 
 # Open Apps
 alias shop='open -b com.adobe.Photoshop'
+
+# Rails
+alias rs='rails server'
+
+#Docker
+alias dc='docker-compose'
+alias dm='docker-machine'
+de () { eval $(docker-machine env $1) }
 
 # Git Stuff
 alias gs='git status'
@@ -116,12 +121,6 @@ alias bos='~/projects/startupschool_py/boston'
 
 # PS Aux
 alias psag='ps aux | grep'
-
-# Python
-alias rs='python manage.py runserver'
-alias wo='workon'
-
-# Vmail
 
 # TaskWarrior
 alias taskconf='vim ~/.taskrc'
@@ -230,3 +229,5 @@ set_prompt() {
 precmd () {
 set_prompt
 }
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

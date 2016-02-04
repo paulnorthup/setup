@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'rgarver/Kwbd.vim'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'zenburn'
 
 
