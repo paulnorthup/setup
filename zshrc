@@ -108,17 +108,14 @@ alias gc='git commit'
 alias gcam='git commit -am'
 alias gp='git push'
 
-#Navigation shortcuts
-alias notes='vim ~/notes'
-
 # Remove spaces and swap with underscores in current directory
 alias rmspaces='rename "s/ /_/g" *'
 
+#NGROK
+alias ngrok='~/ngrok'
+
 # Navigation
-alias si='~/projects/startupschool_py'
-alias rampup='~/projects/startupschool_py/rampup'
-alias nyc='~/projects/startupschool_py/newyork'
-alias bos='~/projects/startupschool_py/boston'
+alias notes='vim ~/notes'
 
 # PS Aux
 alias psag='ps aux | grep'
