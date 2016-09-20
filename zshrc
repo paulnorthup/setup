@@ -227,5 +227,3 @@ set_prompt() {
 precmd () {
 set_prompt
 }
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"

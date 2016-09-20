@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.dotfiles/bundle/Vundle.vim
-call vundle#begin('~/.dotfiles/bundle')
+set rtp+=~/dotfiles/bundle/Vundle.vim
+call vundle#begin('~/dotfiles/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
