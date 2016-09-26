@@ -3,3 +3,5 @@ bower_components/
 .env
 dist/
 node_modules/
+bundle
+doc/

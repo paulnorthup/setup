@@ -2,7 +2,8 @@ echo "Set up git defaults"
 git config --global user.email "paul@paulnorthup.com"
 git config --global user.name "Paul Northup"
 git config --global push.default simple
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+echo "Create global gitignore"
+ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 echo "Create tmp folder for swp files ~/.vimtmp"
 mkdir -p ~/.vimtmp

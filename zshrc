@@ -111,9 +111,6 @@ alias gp='git push'
 # Remove spaces and swap with underscores in current directory
 alias rmspaces='rename "s/ /_/g" *'
 
-#NGROK
-alias ngrok='~/ngrok'
-
 # Navigation
 alias notes='vim ~/notes'
 
