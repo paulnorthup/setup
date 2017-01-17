@@ -19,13 +19,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Users/paul/drush:/Users/paul/.rvm/bin:/usr/local/share/npm/bin:/Users/paul/bin:/usr/local/share/python
+export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Users/paul/drush:/Users/paul/.rvm/bin:/usr/local/share/npm/bin:/Users/paul/bin
 
 # Editor
 export EDITOR='vim'
-
-#Drush
-export PATH=$PATH:/Users/paul/drush
 
 # NPM to path
 PATH=$PATH:/usr/local/share/npm/bin
@@ -46,29 +43,17 @@ compinit
 # bookmarks
 export MARKPATH=$HOME/.marks
 function jump { 
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+  cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
 function mark { 
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+  mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
 function unmark { 
-    rm -i "$MARKPATH/$1"
+  rm -i "$MARKPATH/$1"
 }
 function marks {
-    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+  \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
 }
-
-# Enable autosuggestions automatically
-zle -N zle-line-init
-
- # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
- # zsh-autosuggestions is designed to be unobtrusive)
- bindkey '^T' autosuggest-toggle
- bindkey '^f' vi-forward-blank-word
-
-export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=3'
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ## Aliases
 # For Easy Editing
@@ -120,13 +105,10 @@ alias psag='ps aux | grep'
 # TaskWarrior
 alias taskconf='vim ~/.taskrc'
 alias t='task'
+alias ts='task sync'
 
-# KeyRemap
-alias kr='/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli'
-
-# Bower
-alias b='bower'
-alias bi='bower install'
+# Github token for homebrew
+export HOMEBREW_GITHUB_API_TOKEN=5174c48655b7fcbb6348f079a377efa51dffa5e8
 
 ## Prompt
 # Global Options
