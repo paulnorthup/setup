@@ -1,10 +1,8 @@
 set nocompatible
 filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/bundle/Vundle.vim
-call vundle#begin('~/dotfiles/bundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -25,30 +23,33 @@ Plugin 'rgarver/Kwbd.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'zenburn'
 
-
 call vundle#end()
 filetype plugin indent on
-
 syntax enable
 
 "SOURCE
 nmap <leader>s :source $MYVIMRC<CR>
+
 "GENERAL
 set backspace=2
 set splitbelow
 set splitright
+
 "syntax
 syntax on
 filetype plugin on
 filetype plugin indent on
 au BufRead,BufNewFile *.scss set filetype=scss
+
 "window
 set number
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 "swp and backup
 set dir=~/.vimtmp
 set backup
 set backupdir=~/.vimbackup
+
 "cursor
 set cursorline
 set cursorcolumn
@@ -57,9 +58,11 @@ set laststatus=2
 
 "KEYMAPPING
 nmap <Tab> <leader>
+
 "navigation
 nmap j gj
 nmap k gk
+
 "buffers
 nmap <leader>bd :Kwbd<CR>
 nmap <leader>vs :vsplit<CR>
@@ -68,6 +71,7 @@ nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
+
 "CtrlP!
 nmap ; :CtrlPBuffer<CR>
 nmap ' :CtrlP<CR>
@@ -75,14 +79,17 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 "registers
 nmap <leader>" :reg<CR>
+
 "search
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
 nmap <leader>q :nohlsearch<CR>
+
 "nerdtree
 nnoremap <leader>e :NERDTreeToggle<CR>
+
 "tab spacing
 nmap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nmap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>

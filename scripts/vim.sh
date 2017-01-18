@@ -5,10 +5,9 @@ mkdir -p ~/.vimtmp
 echo "Create a backup folder at ~/.vimbackup"
 mkdir -p ~/.vimbackup
 echo "Create symlinks for .vim and .vimrc, prep for Vundle"
-ln -s ./files/vimrc ~/.vimrc
+ln -s ~/setup/files/vimrc ~/.vimrc
 mkdir ~/.vim
-ln -s bundle/ ~/.vim/bundle/
 echo "Pull the latest Vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~./bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Install vim plugins"
 vim +PluginInstall +qall
