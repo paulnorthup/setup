@@ -15,12 +15,19 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
+plugins=(
+  git
+  task
+  osx
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Users/paul/drush:/Users/paul/.rvm/bin:/usr/local/share/npm/bin:/Users/paul/bin
+export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/Users/paul/bin:/Users/paulnorthup/code/bb/lello/node_modules/.bin
 
+##Tokens
+[ -f ~/.tokens ] && source ~/.tokens
 # Editor
 export EDITOR='vim'
 
@@ -40,7 +47,13 @@ fpath=($fpath /usr/local/share/doc/task/scripts/zsh)
 autoload -Uz compinit
 compinit
 
-# bookmarks
+#bookbub
+export BBWORKSPACE=~/code/bb
+eval $(dinghy env)
+export INTERNAL_API_USERNAME_STAGING="bookbub"
+export INTERNAL_API_PASSWORD_STAGING="Lv6QUVdbq5iYsWtXZ8w1"
+
+# marks
 export MARKPATH=$HOME/.marks
 function jump { 
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
@@ -54,6 +67,7 @@ function unmark {
 function marks {
   \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
 }
+alias j='jump'
 
 ## Aliases
 # For Easy Editing
@@ -79,7 +93,8 @@ alias eject='osascript -e "tell application \"Finder\" to eject (every disk whos
 alias shop='open -b com.adobe.Photoshop'
 
 # Rails
-alias rs='rails server'
+alias rs='bin/rails server'
+alias rake='bin/rake'
 alias rc='rails console'
 
 #Docker
@@ -92,6 +107,8 @@ alias gs='git status'
 alias gc='git commit'
 alias gcam='git commit -am'
 alias gp='git push'
+#clean up stale local branches
+alias gitcleanup="git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs -pt git branch -D"
 
 # Remove spaces and swap with underscores in current directory
 alias rmspaces='rename "s/ /_/g" *'
@@ -105,16 +122,20 @@ alias psag='ps aux | grep'
 # TaskWarrior
 alias taskconf='vim ~/.taskrc'
 alias t='task'
+alias ta='task add'
+alias td='task done'
+alias tm='task modify'
+alias tn='task n'
 alias ts='task sync'
+alias tsh='tasksh'
 
-# Github token for homebrew
-export HOMEBREW_GITHUB_API_TOKEN=5174c48655b7fcbb6348f079a377efa51dffa5e8
+# Simulators
+alias sim='open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 ## Prompt
 # Global Options
 setopt prompt_subst
 autoload colors zsh/terminfo
-colors
 autoload -U colors && colors # Enable colors in prompt
 
 ## Git Stuff
@@ -206,3 +227,7 @@ set_prompt() {
 precmd () {
 set_prompt
 }
+
+eval $(thefuck --alias)
+export PATH="/usr/local/opt/ruby@2.5/bin:/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"

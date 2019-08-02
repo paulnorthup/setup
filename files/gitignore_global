@@ -5,3 +5,5 @@ dist/
 node_modules/
 bundle
 doc/
+tmp/
+yarn-error.log

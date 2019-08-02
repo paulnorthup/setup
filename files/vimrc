@@ -16,12 +16,22 @@ Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-markdown'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'othree/html5.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'rgarver/Kwbd.vim'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'fleischie/vim-styled-components'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'zenburn'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'zxqfl/tabnine-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,15 +45,43 @@ set backspace=2
 set splitbelow
 set splitright
 
-"syntax
+"syntax/linting
 syntax on
 filetype plugin on
 filetype plugin indent on
 au BufRead,BufNewFile *.scss set filetype=scss
+set textwidth=80
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+nmap <leader>st :SyntasticToggleMode<CR>
+nmap <leader>sc :SyntasticCheck<CR>
+nmap <leader>sf :SyntasticCheck --fix<CR>
+
+" enable eslint
+let g:syntastic_javascript_checkers = ['eslint']
+
+" force json files to use json linting instead of javascript
+au BufRead,BufNewFile *.json set filetype=json
 
 "window
 set number
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+set gfn=monaco:h12
+
+"tabs
+nmap <leader>tn :tabnew<CR>
+nmap <leader>tc :tabclose<CR>
+nmap <leader>to :tabonly<CR>
+nmap <leader>ts :tabs<CR>
 
 "swp and backup
 set dir=~/.vimtmp
@@ -76,6 +114,8 @@ nmap <C-K> <C-W>k
 nmap ; :CtrlPBuffer<CR>
 nmap ' :CtrlP<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_max_files=0
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 "registers
 nmap <leader>" :reg<CR>
@@ -98,9 +138,6 @@ nmap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 "markdown
 nmap <leader>dm :%!/usr/local/bin/markdown --html4tags<CR>
-"syntastic
-nmap <leader>st :SyntasticToggleMode<CR>
-nmap <leader>sc :SyntasticCheck<CR>
 "Gundo
 map <leader>gut :GundoToggle<CR>
 "CloseTag.vim
