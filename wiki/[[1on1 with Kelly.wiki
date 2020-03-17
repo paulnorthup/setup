@@ -1,0 +1,2 @@
+Split out the fields that are hard to do and make them new cards
+

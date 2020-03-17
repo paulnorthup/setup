@@ -1,0 +1,26 @@
+pane	github	1	:zsh	1	:*	1	:/Users/northup/code/bb/lello	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/northup/code/bb/hedwig	1	vim	:vim
+vim
+pane	lello	1	:server	0	:#-	1	:/Users/northup/code/bb/lello	0	node	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-8748-0/rc
+pane	lello	1	:server	0	:#-	2	:/Users/northup/code/bb/lello	0	zsh	:
+pane	lello	1	:server	0	:#-	3	:/Users/northup/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-3738-0/rc
+pane	lello	1	:server	0	:#-	4	:/Users/northup/code/bb/lello	1	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-13288-0/rc
+pane	lello	2	:work	1	:*	1	:/Users/northup/code/bb/lello	1	vim	:vim
+pane	lello	2	:work	1	:*	2	:/Users/northup/code/bb/lello	0	vim	:vim
+vim
+pane	lello	2	:work	1	:*	3	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-38781-0/rc
+pane	mockingjay	1	:vim	1	:*	1	:/Users/northup/code/bb/mockingjay	0	vim	:vim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/northup/code/bb/mockingjay	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/northup/code/bb/mockingjay	0	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-2027-0/rc
+pane	mockingjay	1	:vim	1	:*	4	:/Users/northup/code/bb/mockingjay	0	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-3448-0/rc
+pane	mockingjay	1	:vim	1	:*	5	:/Users/northup/code/bb/mockingjay	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/northup	1	vim	:vim
+pane	pulp	1	:vim	1	:*	1	:/Users/northup/code/bb/pulp	1	vim	:vim
+window	github	1	1	:*	5bd1,320x81,0,0,50
+window	hedwig	1	1	:*	ae1f,320x81,0,0,108
+window	lello	1	0	:#-	d021,320x81,0,0{161x81,0,0[161x40,0,0,3,161x40,0,41,13],158x81,162,0[158x40,162,0,5,158x40,162,41,103]}
+window	lello	2	1	:*	1e90,320x81,0,0{160x81,0,0,45,159x81,161,0[159x40,161,0,78,159x40,161,41,104]}
+window	mockingjay	1	1	:*	c8cc,180x49,0,0{90x49,0,0,9,89x49,91,0[89x12,91,0,65,89x11,91,13,82,89x12,91,25,66,89x11,91,38,81]}
+window	notes	1	1	:*	686f,180x49,0,0,10
+window	pulp	1	1	:*	db71,180x52,0,0,22
+state	lello	hedwig

@@ -1,0 +1,37 @@
+- [.] Frame parts
+  - [ ] Pegs (just fronts?)
+  - [ ] Engine mount bolts (at least front right bottom)
+  - [ ] Muffler bolt, nut, lockwasher
+  - [ ] Rear shocks
+  - [.] Rear sets
+    - [X] Universal rearset pegs
+    - [ ] Linkage bars
+    - [ ] Ball joints
+    - [ ] spline connectors
+- [.] Accessory parts
+  - [X] Headlight
+  - [ ] License plate bracket
+  - [ ] Brake banjo crush washers
+  - [ ] Rear brake pads
+- [ ] Engine parts
+  - [ ] Piston retaining circlips (x2)
+  - [ ] Complete gasket set
+  - [ ] Bottom end oil seals
+  - [ ] Clutch pack
+  - [ ] Clutch springs
+  - [ ] Chain
+  - [ ] Sprockets
+  - [ ] oil filter
+  - [ ] oil drain plug
+  - [ ] exhaust copper crush washers
+  - [ ] cam end plug seals
+- [ ] Electronics
+  - [ ] Slim battery (green battery company?)
+  - [ ] rear LED signal strips or lights or something
+  - [ ] brighter brake light? moto 5 light
+  - [ ] license plate ligh
+- [ ] Tools
+  - [ ] Bristle angle grinder brush
+  - [ ] Body filler
+  - [ ] Mixing board
+  - [ ] Body filler spreaders

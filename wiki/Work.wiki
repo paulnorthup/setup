@@ -1,0 +1,125 @@
+Feb 10, 2020
+- updated httplog to 1.4.2 because 1.4.0 was yanked
+- removed experimental promotion checkbox from the template
+Feb 11, 2020
+- test `collapse_duplicate` on staging with real partners
+- ask about what data should be transferred between partners
+- transferred data between serita and alexandra
+Feb 12, 2020
+- Investigate rollbar 1061/1060
+  - Can't run a time flake in the past? Not sure how to use the same seed and
+    time to check the validity of the flake.
+  - Checking flaky spec docs
+  - Can't match to any of the flakey spec patterns we have, will need help to
+    debug. moving on to next rollbar
+  - Look into sorting and whether or not that's consistent
+  - Figure out where it went nil
+  - Look at all the files involved in record_merge.rb
+  - Found the build where the test flaked:
+    https://circle2.bubtools.net/gh/BookBub/lello/254174#tests/containers/12
+  - Ran in a console and had a found a potential point of failure with an id
+    mismatch
+  - Ran in a test console and couldn't reproduce the issue
+  - Is there a better way of getting an activerecord class from a table name?
+  - Ask infra if theres a flake around lazy loaded data. any circle config
+    changes?
+- Investigate rollbar 8962
+  - seems that yanking a promotion that is "confirmed" is somehow attempting to
+    confirm the promotion, and the health report can't transition to confirmed
+    from confirmed (or so it seems?)
+Feb 19, 2020
+- Add flavor to the with_model issue
+- Ask about "Gracefully stopping..." issue
+  - known issue, not a problem
+- Add publisher name on audiobook promotions in lello
+  - expose the publisher from mockingjay internal api (audiobook.publisher) in
+    isbn_lookup
+  - have lello consume the new data
+  - show the publisher on the audiobook promotion page
+  - show publisher on bulk audiobook promotion page
+  - Plan of attack
+    - Add a migration for audiobook.publisher column
+    - expose data on the mockingjay side
+    - show data on the lello side
+  
+Feb 20, 2020
+- Backfill audiobook data
+- ActiveRecord pull 100ish rows at a time
+- Ping CMX about hammering their endopoint
+- Write script to grab each audiobook and do the audiobook updater
+Feb 24, 2020
+- Get caught up on email, slack, etc
+- Caught up on tech debt grooming
+- Start making modals
+  - wrap vc in overlay vc
+  - figure out why this component is a constant
+- Daily Review walk through
+  - focus on finding actionable steps to take against things
+  - week is a good starting pointm, change tile size, play around
+  - each group on the dash has a readme section, use it
+  - logs to dig in, log search
+  - list and graph mode to help see whats going on
+  - can save log views
+  - more traffic more worried about latency spike
+  - 1s of errors can be triaged at a rollbar level
+  - 10s of errors worth investigating
+
+Feb 25, 2020
+- Make a new component for the modal to pass via overlay
+- use css modules
+- Daily Review
+  - read and learn what the graphs do
+  - 
+Feb 26, 2020
+Partner service, how to split it out, whats the best way to go about that
+it's easy to reach across into lello so how can we make that harder (includes,
+css, js, other stuff)
+Check in some more before meeting tomorrow
+
+Feb 28, 2020
+fun with subscriptions
+
+Mar 03, 2020
+- Figure out script to add new subscription to each user who is signed up for
+  general marketing updates
+Mar 04, 2020
+Detaching a wardrobe instance
+- ENSURE NO DEPLOY
+- Autoscaling groups
+- increase desired count to 2
+- spin up new instance
+- rename instance
+- detach
+- ssh into bastion -> ip of new instance
+- change hostname
+- create card in the on call board with instructions on how to ssh in, tmux in,
+  so they can manage it
+  
+  Partner -> User -> Source
+  Partner -> User -> Subscription -> Subscribable
+  
+
+Mar 09, 2020
+- SQL mailing changes
+- https://github.com/BookBub/lello/pull/17850
+- spec first and build later
+- check subscribed, is one, make sure something in sql isn't already doing what
+  we want
+- unsubscribe them and check for 0
+- temp tables, CTE, with clause help reduce large query into small pieces
+- built a new with clause (own subquery)
+- 'using' if both relate to the same db
+- 'on' if they don't
+- join = inner join will only join things in the center of a ven diagram
+- left_outer_join joins the entire left of ven diagram, adds null values
+- left outer join will return a row for each one-to-many:w
+
+Mar 11, 2020
+- figure out what's going on with FNR issue
+- Solve flakey spec
+- Adjust Pulp to avoid 100% CPU usage
+- 
+Mar 12, 2020
+- Validation on the lello side to not allow a one time payment of $0 (being nice to the end user)
+- Validation in taft so we can prevent a charge for $0, so we can protect tafts integrity. $0 is an error state and should not be allowed.
+- Card for why the price in taft isnt updating when the promotion fee is changed (actual vs expected fee). Only edit if the charge hasn't gone through so we dont overcharge partners

@@ -1,0 +1,25 @@
+[[Today]] I'm going to build a rear wall for the van.
+
+It should fit securely in the rear section of the van and offer some protection
+against the wind and cold. We'll see how well that works.
+
+I'm feeling a little tired, didn't get to sleep until late with Marie's
+coughing. The dog needs to play today and I need to do some dishes and clean up
+around the house. I've been slacking on my work.
+
+Tonight I get to jam with Jeff/Chad/etc, so that should be pretty fun. Haven't
+heard from wes yet about his Jeep but hopefully we can work on that too.
+
+Financial state - effed. Need to get more organized, or maybe just continue to
+play with the toys I have. I'll start prepping for winter, sharpening tools and
+pons to get everything dialed in. With that done, it's only gas money and food
+between me and a hell of a good time.
+
+Got Taskwarrior set up again this morning. Maybe I'll use it this time :) Part
+of the giant tmux config though so it should be much easier for me to use it,
+now that it's always running and synced.
+
+Loving the terminal env right now. It really makes me want to be on the computer
+again. Haven't felt that in some time.
+
+Enough for today. Good start.

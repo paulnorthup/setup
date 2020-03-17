@@ -1,0 +1,57 @@
+snippet demo "BookBub DemoV2 BoilerPlate"
+import { DemoV2 } from 'javascripts/features/demos/components/demo_v2';
+import { DemoCollection } from "javascripts/features/demos/components/demo_collection";
+import { COMPONENT } from 'javascripts/shared/components/COMPONENT';
+
+export class COMPONENTDemo extends React.PureComponent {
+  render() {
+    const propTypes = {
+			TYPE: {
+        description: "",
+        values: [],
+      },
+    };
+
+    const description = "";
+
+    return (
+      <DemoCollection
+        componentName={this.props.demoName}
+        componentPropTypes={propTypes}
+				component.defaultProps={COMPONENT.defaultProps}
+        description={description}
+      >
+
+        <DemoV2 title="COMPONENT">
+        </DemoV2>
+        <DemoV2 title="Default Section">
+        </DemoV2>
+
+      </DemoCollection>
+    );
+  }
+}
+
+COMPONENTDemo.propTypes = {
+  demoName: PropTypes.string,
+};
+COMPONENTDemo.defaultProps = {
+  demoName: 'COMPONENT',
+};
+endsnippet
+
+snippet component "BookBub React Component Boilerplate"
+import classNames from 'classnames';
+import "stylesheets/shared/components/partner_dashboard/pd_layout";
+
+export class ComponentName extends React.Component {
+  render() {
+    return (
+    );
+  }
+}
+ComponentName.propTypes = {
+};
+ComponentName.defaultProps = {
+};
+endsnippet

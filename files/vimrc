@@ -1,37 +1,62 @@
 set nocompatible
 filetype off
+set mmp=5000
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/setup/files/vim/snippets/
 call vundle#begin()
+runtime macros/matchit.vim
 
-" let Vundle manage Vundle, required
+"fuzzy finder
+set rtp+=/usr/local/opt/fzf
+
+"let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
-Plugin 'rking/ag.vim'
+" Syntax
+Plugin 'tpope/vim-markdown'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'fleischie/vim-styled-components'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-rails'
+Plugin 'isRuslan/vim-es6'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'vimwiki/vimwiki'
+
+"Helpers
 Plugin 'sjl/gundo.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-markdown'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'othree/html5.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-haml'
-Plugin 'rgarver/Kwbd.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'fleischie/vim-styled-components'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'isRuslan/vim-es6'
-Plugin 'tpope/vim-commentary'
+Plugin 'majutsushi/tagbar'
+
+"Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+"Search
+Plugin 'rking/ag.vim'
+Plugin 'junegunn/fzf.vim'
+
+"Other
+Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
-Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'tpope/vim-surround'
+Plugin 'rgarver/Kwbd.vim'
 Plugin 'zenburn'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'zxqfl/tabnine-vim'
+Plugin 'blindFS/vim-taskwarrior'
 
 call vundle#end()
 filetype plugin indent on
@@ -45,6 +70,10 @@ set backspace=2
 set splitbelow
 set splitright
 
+"Zoom
+noremap Zz <c-w>_ \| <c-w>\|
+noremap Zo <c-w>=
+
 "syntax/linting
 syntax on
 filetype plugin on
@@ -56,6 +85,7 @@ set textwidth=80
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%{FugitiveStatusline()}
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -69,19 +99,23 @@ nmap <leader>sf :SyntasticCheck --fix<CR>
 " enable eslint
 let g:syntastic_javascript_checkers = ['eslint']
 
+
 " force json files to use json linting instead of javascript
 au BufRead,BufNewFile *.json set filetype=json
+
+" run specs in tmux pane
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
+" vim-rspec mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+nmap <Leader>rs <Plug>SetTmuxVars
 
 "window
 set number
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set gfn=monaco:h12
-
-"tabs
-nmap <leader>tn :tabnew<CR>
-nmap <leader>tc :tabclose<CR>
-nmap <leader>to :tabonly<CR>
-nmap <leader>ts :tabs<CR>
 
 "swp and backup
 set dir=~/.vimtmp
@@ -110,12 +144,9 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 
-"CtrlP!
-nmap ; :CtrlPBuffer<CR>
-nmap ' :CtrlP<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_max_files=0
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+"FZF
+nmap ;; :Buffers<CR>
+nmap '' :Files<CR>
 
 "registers
 nmap <leader>" :reg<CR>
@@ -127,25 +158,41 @@ set smartcase
 set hlsearch
 nmap <leader>q :nohlsearch<CR>
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 "nerdtree
 nnoremap <leader>e :NERDTreeToggle<CR>
 
-"tab spacing
-nmap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-nmap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-nmap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-nmap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
-nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 "markdown
 nmap <leader>dm :%!/usr/local/bin/markdown --html4tags<CR>
+
 "Gundo
 map <leader>gut :GundoToggle<CR>
+
 "CloseTag.vim
 let b:unaryTagsStack=""
-
 if !exists("b:unaryTagsStack")
     let b:unaryTagsStack=""
 endif
+
+"Snippets
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
+let g:snipMate.snippet_version = 1
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
+
+" Wiki
+let g:vimwiki_list = [{'path': '~/setup/wiki/',
+                      \ 'path_html': '~/setup/wiki/wiki_html'}]
+" insert date
+nmap <leader>id :put =strftime('%b %d, %Y')<CR>
 
 "NERDREE
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -155,7 +202,7 @@ let NERDTreeWinSize=40
 "COLORS
 set t_Co=256
 set background=dark
-colorscheme zenburn
+colorscheme gruvbox
 
 "RESIZING
 if bufwinnr(1)
@@ -165,3 +212,6 @@ endif
 
 "PASTE
 set pastetoggle=<leader>p
+
+"Rails
+nnoremap <Leader>b :TagbarToggle<CR>

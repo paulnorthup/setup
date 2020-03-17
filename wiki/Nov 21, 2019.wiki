@@ -1,0 +1,6 @@
+
+Check out byebug
+p instead of puts calls .inspect
+
+Simplest Form
+categories, dates, admin user, notes and comments

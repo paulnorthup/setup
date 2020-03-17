@@ -1,0 +1,73 @@
+==Life==
+Each hero starts with two beers of life
+
+==Mana==
+1 mana per seltzer or water drank
+
+1 mana per slice of pizza
+
+= Dota skills/heros =
+
+====Lina====
+  Dragon Slave:: Send a fiery dragon at an enemy hero. They drink 1/4 beer.
+    Cost: 1 mana
+  Laguna Blade:: Strike a hero with a nip of fireball
+    Cost: 3 mana
+
+====Phantom Assassin ====
+  Critical Strike:: Can call on anyone to finish their beer.
+    Cost: 3 mana
+  Blur:: You may dodge one spell this game
+    Cost: Free, use once.
+
+====Omninight====
+  Repel:: Any spell targeted at you may be bounced back to its caster
+    Cost: 2 mana
+    
+====Legion Commander====
+  Duel:: You may challenge a hero to a duel of rocks paper scissors. If you win, they drink 1/4 beer and you may immediately duel another target. If you lose, you drink 1/2 beer.
+    Cost: 1 mana
+    
+====IO====
+  Tether:: You may tether yourself to another hero until either of your beers are finished.  Spells targeting either of you are split between the two of you, lightening the load.
+    Cost: 2 mana
+    
+====Ancient Apparition====
+  Ice Blast:: Call on a hero to drink 1/4 beer. If their beverage is 20% full or less, they have to finish it.
+    Cost: 2 mana
+    
+====Silencer====
+  Arcane Curse:: Target opponent can't cast a spell until their beer is empty.
+    Cost: 2 mana
+  Global Silence:: At any time, yell "GLOBAL SILENCE". No spells may be cast for the next 10 minutes.
+    (You may only cast this once)
+    
+====Dazzle====
+  Shallow Grave:: You may protect someone from any spell causing them to drink
+    Cost: 2 mana
+    (You may only cast this once).
+  Shadow Word:: You may "heal" another hero by swapping their beer for a seltzer or water.  On cast, you may also choose to "heal" yourself as well.
+    Cost: 2 mana
+    
+====Vengeful Spirit====
+  Magic Missle:: Upon casting magic missle, the target is stunned and cannot move until they finish their beer.
+    Cost: 2 mana
+   
+====Terrorblade====
+  Sunder:: Immediately switch beers with any opponent.
+    Cost: 2 mana
+
+====Enigma====
+  Balck Hole:: When cast, any heroes you are physically touching must finish their beer.
+    Cost: 5 mana
+    
+====Rubick====
+  Spell Steal:: If cast within 2 seconds of another spell, you steal that spell and can choose a new target. If you don't cast the stolen spell by the end of your beer, you lose the spell and must steal a new one.
+    Cost: 2 mana
+  
+====Puck====
+  Phase Shift:: You teleport to another dimension to dodge a spell.
+    Cost: 1 mana
+  Dream Coil:: When cast, anyone you are physically touching are bound together. When one drinks, they all drink until one of them finishes their drink.
+    Cost: 4 mana
+    

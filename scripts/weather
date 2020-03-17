@@ -1,0 +1,62 @@
+#!/bin/bash
+#Weather forecasts
+
+while getopts 'f' flag; do
+  case "${flag}" in
+    f) days=${OPTARG} ;;
+  esac
+done
+
+function checkForecast {
+  ansiweather -F -l $1
+}
+
+function checkWeather {
+  ansiweather
+}
+
+function checkIce {
+  echo 'Checking the ice forecast'
+  cities+=('5090347' '4759968' '4965481' '5238190')
+}
+
+function checkFam {
+  echo 'Checking the family forecast'
+  cities+=('5576882' '4975802' '5427946')
+}
+
+if [ $# = 0 ]; then
+  checkWeather
+elif [ $# = 1 ]; then
+  case $1 in
+    ice)
+      checkIce
+    ;;
+    family)
+      checkFam
+    ;;
+    *)
+      echo 'I dont know what to do. Try "ice" or "family"'
+    ;;
+  esac
+  #check each city's weather
+  for city in "${cities[@]}"
+    do
+      checkForecast $city
+  done
+fi
+
+#North Conway NH
+#5090347
+##Franconia NH
+#759968
+##Gorham ME
+#4965481
+##Lyndon VT (Willoughby)
+#5576882
+##Estes Park
+#5238190
+##Portland ME
+#4975802
+##Lakewood
+#5427946

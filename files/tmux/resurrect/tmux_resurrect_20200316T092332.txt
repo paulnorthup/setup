@@ -1,0 +1,37 @@
+pane	github	1	:zsh	1	:*	1	:/Users/northup/code/bb/lello	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/northup/code/bb/hedwig	1	vim	:vim
+vim
+pane	lello	1	:server	0	:#-	1	:/Users/northup/code/bb/lello	0	node	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-8748-0/rc
+pane	lello	1	:server	0	:#-	2	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-59630-0/rc
+pane	lello	1	:server	0	:#-	3	:/Users/northup/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-3738-0/rc
+pane	lello	1	:server	0	:#-	4	:/Users/northup/code/bb/lello	1	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-13288-0/rc
+pane	lello	1	:server	0	:#-	5	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-23853-0/rc
+pane	lello	2	:work	1	:*	1	:/Users/northup/code/bb/lello	1	vim	:vim
+pane	lello	2	:work	1	:*	2	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-7950-0/rc
+pane	mockingjay	1	:vim	1	:*	1	:/Users/northup/code/bb/mockingjay	0	vim	:vim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/northup/code/bb/mockingjay	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/northup/code/bb/mockingjay	0	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-2027-0/rc
+pane	mockingjay	1	:vim	1	:*	4	:/Users/northup/code/bb/mockingjay	0	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-3448-0/rc
+pane	mockingjay	1	:vim	1	:*	5	:/Users/northup/code/bb/mockingjay	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/northup	1	vim	:vim
+pane	pulp	1	:ruby	1	:*M	1	:	0	sudo	:vim
+sudo vim /etc/hosts
+pane	pulp	1	:ruby	1	:*M	2	:/Users/northup/code/bb/pulp	1	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-36989-0/rc
+pane	pulp	1	:ruby	1	:*M	3	:/Users/northup/code/bb/pulp	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-88061-0/rc
+pane	pulp	1	:ruby	1	:*M	4	:/Users/northup/code/bb/pulp	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-984-0/rc
+pane	taft	1	:vim	1	:*	1	:/Users/northup/code/bb/taft	1	vim	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-79257-0/rc
+pane	taft	1	:vim	1	:*	2	:/Users/northup/code/bb/taft	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-19239-0/rc
+pane	taft	1	:vim	1	:*	3	:/Users/northup/code/bb/taft	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-62241-0/rc
+pane	taft	1	:vim	1	:*	4	:/Users/northup/code/bb/taft	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-15008-0/rc
+pane	valve	1	:bash	1	:*	1	:/Users/northup/code/bb/valve	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-41023-0/rc
+pane	valve	1	:bash	1	:*	2	:/Users/northup/code/bb/valve	1	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-45649-0/rc
+window	github	1	1	:*	5bd1,320x81,0,0,50
+window	hedwig	1	1	:*	ae1f,320x81,0,0,108
+window	lello	1	0	:#-	7830,269x74,0,0{67x74,0,0[67x36,0,0,3,67x37,0,37,13],66x74,68,0[66x36,68,0,5,66x37,68,37,103],134x74,135,0,159}
+window	lello	2	1	:*	9dd9,269x74,0,0{136x74,0,0,146,132x74,137,0,158}
+window	mockingjay	1	1	:*	fe2e,284x72,0,0{142x72,0,0,9,141x72,143,0[141x18,143,0,65,141x17,143,19,82,141x18,143,37,66,141x16,143,56,81]}
+window	notes	1	1	:*	5f7f,269x72,0,0,10
+window	pulp	1	1	:*M	4eb7,269x74,0,0{66x74,0,0[66x37,0,0,22,66x36,0,38,164],202x74,67,0[202x37,67,0,161,202x36,67,38,162]}
+window	taft	1	1	:*	38e6,320x81,0,0{160x81,0,0,130,159x81,161,0[159x20,161,0,131,159x49,161,21,141,159x10,161,71,132]}
+window	valve	1	1	:*	79d0,269x74,0,0{134x74,0,0,116,134x74,135,0,166}
+state	valve	pulp

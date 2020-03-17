@@ -1,0 +1,6 @@
+= Plan =
+
+* Check out radmin page PRs
+* Lay out strategy from front-end back
+* Lay out strategy from controller forward
+* Figure out how to tie them together

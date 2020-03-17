@@ -1,0 +1,8 @@
+Went for a nice bike ride this morning with the dog at the fells. I need to
+remember to bring a hat, my ears were so cold I had to stop and bail halfway
+around my loop. Dang. The orange loop is really good though, would be a good one
+for Steve or Aaron or both. Decent flow and a fair bit of technical challenge.
+
+I got the weather forecasting "app" set up pretty well, I'd like to break down
+the commands a little bit to be able to call weather for different contexts,
+I'll give that a try this morning and see how it goes.
