@@ -30,6 +30,7 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'pechorin/any-jump.vim'
 
 "Helpers
 Plugin 'sjl/gundo.vim'
@@ -212,6 +213,9 @@ endif
 
 "PASTE
 set pastetoggle=<leader>p
+
+"Thyme
+nmap <leader>0:!thyme -d<cr>
 
 "Rails
 nnoremap <Leader>b :TagbarToggle<CR>

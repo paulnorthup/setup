@@ -85,6 +85,7 @@ Mar 03, 2020
 Mar 04, 2020
 Detaching a wardrobe instance
 - ENSURE NO DEPLOY
+- EC2
 - Autoscaling groups
 - increase desired count to 2
 - spin up new instance
@@ -123,3 +124,43 @@ Mar 12, 2020
 - Validation on the lello side to not allow a one time payment of $0 (being nice to the end user)
 - Validation in taft so we can prevent a charge for $0, so we can protect tafts integrity. $0 is an error state and should not be allowed.
 - Card for why the price in taft isnt updating when the promotion fee is changed (actual vs expected fee). Only edit if the charge hasn't gone through so we dont overcharge partners
+ 
+Apr 02, 2020
+  Handle for Listing Requests, Prorder Promotions, and New Release Promotions
+  Fork on semi managed publishers
+
+
+  Strategy
+  - Add column for extend_credit (bool?) default to false
+  - backfill partners in DISABLE_SEMI_MANAGED_INLINE_INVOICING flipper group to
+    correct extend_credit state
+  - follow inline-invoicing logic from promotions_confirm_controller to use
+    extend_credit bool value for promotions
+  - use extend_credit for preorder promotions
+  - use extend_credit for new release promotions
+  
+  belongs on the partner role moreso than the partner
+  
+  we want a table that references the partner (partner will have partner id)
+  partner has one "yet to be named" credit thing
+  yet to be named thing has one
+  relationship will need to exist when creating a partner
+  
+  New plan
+  put it on the partner for now in a horribly named boolean value
+  where the listing request invoice inline is, replace that with a policy object
+  that receives a partner
+  when you ask the policy object, it includes the guard method and the flipper
+  bill immediately
+  
+  Sandy Metz - videos worth watching
+  
+
+Apr 07, 2020
+backfill semi managed partners with invoice_immediately: false
+  ```
+    Partner.includes(:partner_role).where(partner_roles: {name: "semi_managed_publisher"}).each do |partner|
+      partner.update(invoice_immediately: false)
+    end
+  ```
+

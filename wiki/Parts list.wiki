@@ -1,8 +1,9 @@
 - [.] Frame parts
-  - [ ] Pegs (just fronts?)
   - [ ] Engine mount bolts (at least front right bottom)
   - [ ] Muffler bolt, nut, lockwasher
   - [ ] Rear shocks
+  - [ ] Remote master cylinder
+  - [ ] Revival brake line kit (may not need it)
   - [.] Rear sets
     - [X] Universal rearset pegs
     - [ ] Linkage bars
@@ -13,6 +14,8 @@
   - [ ] License plate bracket
   - [ ] Brake banjo crush washers
   - [ ] Rear brake pads
+  - [ ] m unit pin blinkers for front
+  - [ ] bright wrap around blinkers for rear
 - [ ] Engine parts
   - [ ] Piston retaining circlips (x2)
   - [ ] Complete gasket set

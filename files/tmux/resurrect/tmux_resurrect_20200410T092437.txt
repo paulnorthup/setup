@@ -1,0 +1,34 @@
+pane	github	1	:zsh	1	:*	1	:/Users/northup/code/bb/lello	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/northup/code/bb/hedwig	1	nvim	:nvim
+pane	lello	1	:server	0	:-	1	:/Users/northup/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-75501-0/rc
+pane	lello	1	:server	0	:-	2	:/Users/northup/code/bb/lello	1	node	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-78807-0/rc
+pane	lello	1	:server	0	:-	3	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-76173-0/rc
+pane	lello	1	:server	0	:-	4	:/Users/northup/code/bb/lello	0	bash	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-83095-0/rc
+pane	lello	2	:work	1	:*Z	1	:/Users/northup/code/bb/lello	1	zsh	:nvim
+pane	lello	2	:work	1	:*Z	2	:/Users/northup/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/8w/0dggrppn7vqfjmj4gpy324hh0000gn/T/nix-shell-60152-0/rc
+pane	mockingjay	1	:vim	1	:*	1	:/Users/northup/code/bb/mockingjay	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/northup/code/bb/mockingjay	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/northup/code/bb/mockingjay	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	4	:/Users/northup/code/bb/mockingjay	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	5	:/Users/northup/code/bb/mockingjay	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/northup	1	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	1	:/Users/northup	0	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	2	:/Users/northup/code/bb/pulp	1	zsh	:
+pane	pulp	1	:ruby	1	:*	3	:/Users/northup/code/bb/pulp	0	zsh	:
+pane	pulp	1	:ruby	1	:*	4	:/Users/northup/code/bb/pulp	0	zsh	:
+pane	taft	1	:vim	1	:*	1	:/Users/northup/code/bb/taft	1	zsh	:
+pane	taft	1	:vim	1	:*	2	:/Users/northup/code/bb/taft	0	zsh	:
+pane	taft	1	:vim	1	:*	3	:/Users/northup/code/bb/taft	0	zsh	:
+pane	taft	1	:vim	1	:*	4	:/Users/northup/code/bb/taft	0	zsh	:
+pane	valve	1	:bash	1	:*	1	:/Users/northup/code/bb/valve	0	zsh	:
+pane	valve	1	:bash	1	:*	2	:/Users/northup/code/bb/valve	1	zsh	:
+window	github	1	1	:*	bc3e,151x44,0,0,1
+window	hedwig	1	1	:*	bc3f,151x44,0,0,2
+window	lello	1	0	:-	3a66,151x44,0,0{73x44,0,0[73x21,0,0,3,73x22,0,22,4],77x44,74,0[77x21,74,0,5,77x22,74,22,6]}
+window	lello	2	1	:*Z	c7b3,151x44,0,0{77x44,0,0,8,73x44,78,0,9}
+window	mockingjay	1	1	:*	6892,151x44,0,0{76x44,0,0,10,74x44,77,0[74x11,77,0,11,74x10,77,12,12,74x11,77,23,13,74x9,77,35,14]}
+window	notes	1	1	:*	5e54,151x44,0,0,15
+window	pulp	1	1	:*	dc22,151x44,0,0{37x44,0,0[37x22,0,0,16,37x21,0,23,17],113x44,38,0[113x22,38,0,18,113x21,38,23,19]}
+window	taft	1	1	:*	b2a1,151x44,0,0{76x44,0,0,20,74x44,77,0[74x8,77,0,21,74x27,77,9,22,74x7,77,37,23]}
+window	valve	1	1	:*	54be,151x44,0,0{75x44,0,0,24,75x44,76,0,25}
+state	lello	
