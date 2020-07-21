@@ -1,0 +1,38 @@
+pane	0	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	blog	1	:zsh	1	:*	1	:/Users/n/Documents/Publii/sites	1	zsh	:
+pane	github	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/n	1	nvim	:nvim
+pane	lello	1	:bash	0	:-	1	:/Users/n/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-86852-0/rc
+pane	lello	1	:bash	0	:-	2	:/Users/n/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-80236-0/rc
+pane	lello	1	:bash	0	:-	3	:/Users/n/code/bb/lello	1	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-87103-0/rc
+pane	lello	1	:bash	0	:-	4	:/Users/n/code/bb/lello	0	node	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-91057-0/rc
+pane	lello	2	:work	1	:*Z	1	:/Users/n/code/bb/lello	1	nvim	:nvim
+pane	lello	2	:work	1	:*Z	2	:/Users/n/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-62483-0/rc
+pane	mockingjay	1	:vim	1	:*	1	:/Users/n	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/n	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	5	:/Users/n	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/n	1	zsh	:
+pane	pulp	1	:ruby	1	:*	1	:/Users/n	0	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	2	:/Users/n	1	zsh	:
+pane	pulp	1	:ruby	1	:*	3	:/Users/n	0	zsh	:
+pane	pulp	1	:ruby	1	:*	4	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	1	:/Users/n	1	zsh	:
+pane	taft	1	:vim	1	:*	2	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	valve	1	:bash	1	:*	1	:/Users/n	0	zsh	:
+pane	valve	1	:bash	1	:*	2	:/Users/n	1	zsh	:
+window	0	1	1	:*	c9fd,316x85,0,0,0
+window	blog	1	1	:*	c9fe,316x85,0,0,1
+window	github	1	1	:*	c9ff,316x85,0,0,2
+window	hedwig	1	1	:*	ca00,316x85,0,0,3
+window	lello	1	0	:-	6944,316x85,0,0{154x85,0,0[154x42,0,0,4,154x42,0,43,5],161x85,155,0[161x42,155,0,6,161x42,155,43,7]}
+window	lello	2	1	:*Z	9d23,316x85,0,0{184x85,0,0,8,131x85,185,0,9}
+window	mockingjay	1	1	:*	39ab,316x85,0,0{158x85,0,0,10,157x85,159,0[157x22,159,0,11,157x20,159,23,12,157x21,159,44,13,157x19,159,66,14]}
+window	notes	1	1	:*	6534,316x85,0,0,15
+window	pulp	1	1	:*	db01,316x85,0,0{119x85,0,0[119x43,0,0,16,119x41,0,44,17],196x85,120,0[196x43,120,0,18,196x41,120,44,19]}
+window	taft	1	1	:*	1884,316x85,0,0{158x85,0,0,20,157x85,159,0[157x22,159,0,21,157x40,159,23,22,157x21,159,64,23]}
+window	valve	1	1	:*	d325,316x85,0,0{157x85,0,0,24,158x85,158,0,25}
+state	lello	blog

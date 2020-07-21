@@ -1,0 +1,19 @@
+# Requires double indentation
+- defaults:
+    link:
+         relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc: vim/vimrc
+    ~/.vim: vim/vim
+    ~/.vim: vim/vim
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux/tmux
+    ~/.zshrc: zsh/zshrc
+    ~/.zsh: zsh/zsh
+    ~/.config/git/ignore:
+        create: true
+        path: git/gitignore_global
+    ~/.gitignore_global: git/gitignore_global

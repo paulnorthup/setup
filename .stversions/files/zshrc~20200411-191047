@@ -1,0 +1,206 @@
+# Antigen
+source ~/setup/files/antigen.zsh
+antigen use oh-my-zsh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git@github.com:spwhitt/nix-zsh-completions.git
+
+antigen apply
+plugins=(git heroku pip lein command-not-found tmux)
+
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+setopt autocd
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+ COMPLETION_WAITING_DOTS="true"
+
+# Customize to your needs...
+export PATH=/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/Users/paul/bin:/Users/paulnorthup/code/bb/lello/node_modules/.bin
+
+##Tokens
+[ -f ~/.tokens ] && source ~/.tokens
+
+# Editor
+export EDITOR='vim'
+alias vim='nvim'
+
+# NPM to path
+PATH=$PATH:/usr/local/share/npm/bin
+
+# user/bin to path
+PATH=$PATH:~/bin
+
+# Add scripts dir to path
+PATH=$PATH:~/setup/scripts
+
+# Add ruby to path
+export PATH="/usr/local/opt/ruby@2.5/bin:/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+
+# Add sbin to path
+export PATH="/usr/local/sbin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+##Add flutter to path
+export PATH="~/code/pn/flutter/bin:$PATH"
+
+fpath=($fpath /usr/local/share/doc/task/scripts/zsh)
+autoload -Uz compinit
+compinit
+
+#bookbub
+export BBWORKSPACE=~/code/bb
+export INTERNAL_API_USERNAME_STAGING="bookbub"
+export INTERNAL_API_PASSWORD_STAGING="Lv6QUVdbq5iYsWtXZ8w1"
+
+# marks
+export MARKPATH=$HOME/.marks
+function jump { 
+  cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark { 
+  mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+  rm -i "$MARKPATH/$1"
+}
+function marks {
+  \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+}
+alias j='jump'
+
+## Aliases
+# For Easy Editing
+alias zconf='vim ~/.zshrc && source ~/.zshrc'
+alias bashconf='vim ~/.bash_profile'
+alias sshconf='vim ~/.ssh/config'
+alias vimconf='vim ~/.vimrc'
+alias tconf='vim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
+alias aconf='vim ~/.config/alacritty/alacritty.yml'
+alias re-source='source ~/.zshrc && source ~/.tmux.conf && source ~/.config/alacritty/alacritty.yml'
+
+# Navigation
+alias code='cd ~/code'
+
+# LS
+alias ll='ls -alp'
+alias ls='ls -G'
+alias sl='sl'
+
+#Eject all disks
+alias eject='osascript -e "tell application \"Finder\" to eject (every disk whose ejectable is true)"'
+
+# Open Apps
+alias shop='open -b com.adobe.Photoshop'
+
+# Rails
+alias rs='bin/rails server'
+alias rake='bin/rake'
+alias rc='rails console'
+
+#Docker
+alias dc='docker-compose'
+alias dm='docker-machine'
+de () { eval $(docker-machine env $1) }
+
+# Git Stuff
+alias gs='git status'
+alias gc='git commit'
+alias gcam='git commit -am'
+alias gp='git push'
+#clean up stale local branches
+alias gitcleanup="git remote prune origin && git branch -vv | awk '/origin.*: gone/ {print \$1}' | fold -s | xargs -p git branch -D"
+alias git-sorted="git madge sorted --basedir . --webpack-config make_webpack_config.js src"
+alias git-depgraph="git madge image --basedir . --webpack-config make_webpack_config.js src | imgcat"
+
+# Remove spaces and swap with underscores in current directory
+alias rmspaces='rename "s/ /_/g" *'
+
+# Navigation
+alias notes='tmux a -t notes'
+alias lello='tmux a -t lello'
+
+# PS aux grep
+alias psag='ps aux | grep'
+
+# Simulators
+alias sim='open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+
+#Weather
+function wttr {
+ curl wttr.in/$1
+}
+
+## Prompt
+# Global Options
+setopt prompt_subst
+autoload colors zsh/terminfo
+autoload -U colors && colors # Enable colors in prompt
+force_colored_prompt=yes
+color_prompt=yes
+
+## Git Stuff
+
+source ~/setup/scripts/zsh-git-prompt/zshrc.sh
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%K{39}%F{235} "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%F{235}%K{39} %F{39}%K{235}"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="%F{39}%K{235}%F{235}%K{39} "
+ZSH_THEME_GIT_PROMPT_BRANCH="%F{235}%K{39}"
+ZSH_THEME_GIT_PROMPT_STAGED="%F{15}%K{39}●%G"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%F{15}%K{39} x%G"
+ZSH_THEME_GIT_PROMPT_CHANGED="%F{15}%K{39} +%G"
+ZSH_THEME_GIT_PROMPT_BEHIND="%F{15}%K{39} ↓%G"
+ZSH_THEME_GIT_PROMPT_AHEAD="%F{15}%K{39} ↑%G"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{15}%K{39} …%G"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{15}%K{39}✔%G"
+
+
+#Set Prompt
+set_prompt() {
+
+  myjobs=()
+  for a (${(k)jobstates})
+  {j=$jobstates[$a];i="${${(@s,:,)j}[2]}"
+  myjobs+=($a${i//[^+-]/})}
+  myjobs=${(j:,:)myjobs}
+
+  rehash
+
+  RPS1='$myjobs'
+  PS1='
+%F{235}%K{235}\
+%F{215}%d\
+%F{235}%K{235}\
+$(git_super_status)
+%F{9}%K{235}  %c
+%F{215}  ➜  %{$reset_color%}'
+}
+
+precmd () {
+set_prompt
+}
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/node@10/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/opt/ruby@2.5/bin:/usr/local/lib/ruby/gems/2.5.0/bin:/usr/local/heroku/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0/bin:/Users/paul/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/paul/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/paul/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/Users/paul/bin:/Users/paulnorthup/code/bb/lello/node_modules/.bin:/usr/local/share/npm/bin:/Users/northup/bin:/Users/northup/setup/scripts:/Users/northup/golang/bin:/usr/local/opt/go/libexec/bin
+
+
+#Nix
+source ~/.nix-profile/etc/profile.d/nix.sh
+export NIX_PATH=$NIX_PATH:bbpkgs=https://github.com/BookBub/nixpkgs/archive/19.07.0.1.tar.gz
+source ~/.nix/auth
+prompt_nix_shell_setup
+export ADMIN=true
+export HOMEBREW_GITHUB_API_TOKEN=09e8e12a7657f95c2047984c588b89c7317b0e86
+
+eval "$(direnv hook zsh)"

@@ -1,0 +1,46 @@
+pane	blog	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/n	1	nvim	:nvim
+pane	hedwig	1	:vim	1	:*	2	:/Users/n	0	zsh	:
+pane	hedwig	2	:bash	0	:-	1	:/Users/n	1	zsh	:
+pane	lello	1	:bash	0	:-	1	:/Users/n/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-12725-0/rc
+pane	lello	1	:bash	0	:-	2	:/Users/n/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-12774-0/rc
+pane	lello	1	:bash	0	:-	3	:/Users/n/code/bb/lello	0	node	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-12727-0/rc
+pane	lello	1	:bash	0	:-	4	:/Users/n/code/bb/lello	1	bash	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-12726-0/rc
+pane	lello	2	:bash	1	:*	1	:/Users/n/code/bb/lello	0	nvim	:nvim
+pane	lello	2	:bash	1	:*	2	:/Users/n/code/bb/lello	1	bash	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-51626-0/rc
+pane	mockingjay	1	:vim	1	:*	1	:/Users/n	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/n	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	5	:/Users/n	0	zsh	:
+pane	nny	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	nny	1	:zsh	1	:*	2	:/Users/n	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/n	1	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	1	:/Users/n	0	zsh	:
+pane	pulp	1	:ruby	1	:*	2	:/Users/n	0	zsh	:
+pane	pulp	1	:ruby	1	:*	3	:/Users/n	1	zsh	:
+pane	pulp	1	:ruby	1	:*	4	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	1	:/Users/n	1	zsh	:
+pane	taft	1	:vim	1	:*	2	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	to	1	:node	1	:*	1	:/Users/n	1	zsh	:
+pane	to	1	:node	1	:*	2	:/Users/n	0	zsh	:
+pane	to	1	:node	1	:*	3	:/Users/n	0	zsh	:
+pane	to	2	:bash	0	:-	1	:/Users/n	1	zsh	:
+pane	valve	1	:bash	1	:*	1	:/Users/n	0	zsh	:
+pane	valve	1	:bash	1	:*	2	:/Users/n	1	zsh	:
+window	blog	1	1	:*	b9a0,202x53,0,0,3
+window	hedwig	1	1	:*	baca,202x53,0,0{102x53,0,0,5,99x53,103,0,6}
+window	hedwig	2	0	:-	b9a4,202x53,0,0,7
+window	lello	1	0	:-	c206,202x53,0,0{98x53,0,0[98x26,0,0,8,98x26,0,27,9],103x53,99,0[103x26,99,0,10,103x26,99,27,11]}
+window	lello	2	1	:*	9dba,161x47,0,0{80x47,0,0,44,80x47,81,0,52}
+window	mockingjay	1	1	:*	4bae,202x53,0,0{101x53,0,0,15,100x53,102,0[100x13,102,0,16,100x13,102,14,17,100x13,102,28,18,100x11,102,42,19]}
+window	nny	1	1	:*	285d,202x53,0,0{101x53,0,0,20,100x53,102,0,21}
+window	notes	1	1	:*	e471,161x47,0,0,22
+window	pulp	1	1	:*	6ec3,202x53,0,0{63x53,0,0[63x26,0,0,23,63x26,0,27,24],138x53,64,0[138x26,64,0,25,138x26,64,27,26]}
+window	taft	1	1	:*	705d,202x53,0,0{101x53,0,0,27,100x53,102,0[100x11,102,0,28,100x30,102,12,29,100x10,102,43,30]}
+window	to	1	1	:*	d2d1,202x53,0,0{101x53,0,0,32,100x53,102,0[100x16,102,0,33,100x36,102,17,34]}
+window	to	2	0	:-	5d05,202x53,0,0,35
+window	valve	1	1	:*	a44d,202x53,0,0{100x53,0,0,38,101x53,101,0,39}
+state	notes	lello

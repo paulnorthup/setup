@@ -1,0 +1,8 @@
+New Release Promotions with Missing Prices in the last 1 week.
+nrp_missing_prices = NewReleasePromotion.
+  confirmed.
+  where(“mailing_date > now() - interval ‘1 week’“).
+  where(“mailing_date < now()“).
+  joins(:observed_prices).
+  includes(observed_prices: :retailer).
+  merge(NewReleasePromotionObservedPrice.missing_price)

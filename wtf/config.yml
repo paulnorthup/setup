@@ -1,0 +1,156 @@
+wtf:
+  term: xterm-256color
+  colors:
+    border:
+      focusable: darkgrey
+      focused: orange
+      normal: darkslategray
+  grid:
+    columns: [32, 32, 32, 32, 32]
+    rows: [10, 10, 10, 10, 10, 4]
+  refreshInterval: 2
+  mods:
+    todo:
+      enabled: true
+      filepaths:
+        - "~/Sync/wikis/personal/To Do.wiki"
+      position:
+        top: 1
+        left: 0
+        height: 2
+        width: 2
+      wrapText: true
+      refreshInterval: 15
+      title: "To Do"
+    prettyweather:
+      enabled: true
+      city: "Somerville, MA"
+      position:
+        top: 3
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 300
+      unit: "m"
+      view: 0
+      language: "en"
+    spotify:
+      enabled: true
+      colors:
+        label: "green"
+        text: "white"
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 0
+    gcal:
+      colors:
+        title: "green"
+        eventTime: "lightblue"
+        description: "paleyellow"
+        highlights:
+        - ['1on1|1\/11', 'green']
+        - ['apple|google|aws', 'blue']
+        - ['interview|meet', 'magenta']
+        - ['lunch', 'yellow']
+        past: "gray"
+      calendarReadLevel: "reader"
+      conflictIcon: "🚨"
+      currentIcon: "💥"
+      displayResponseStatus: true
+      email: "paul@paulnorthup.com"
+      enabled: true
+      eventCount: 15
+      hourFormat: "12"
+      multiCalendar: false
+      position:
+        top: 0
+        left: 2
+        height: 4
+        width: 1
+      refreshInterval: 300
+      secretFile: "~/.config/wtf/gcal/client_secret.json"
+      showDeclined: false
+      showEndTime: false
+      timezone: "America/NewYork"
+      withLocation: true
+    clocks:
+      colors:
+        rows:
+          even: "lightblue"
+          odd: "white"
+      enabled: true
+      locations:
+        Boston: "America/New York"
+        Denver: "America/Denver"
+        Poland: "Europe/Warsaw"
+      position:
+        top: 3
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 15
+      sort: "alphabetical"
+      title: "Time"
+      type: "clocks"
+    ipinfo:
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 4
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 150
+    power:
+      enabled: true
+      position:
+        top: 4
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 15
+      title: "⚡️"
+    exchangerates:
+      enabled: true
+      focusable: false
+      position:
+        top: 4
+        left: 0
+        width: 1
+        height: 1
+      rates:
+        CAD:
+          - "USD"
+        EUR:
+          - "USD"
+        USD:
+          - "EUR"
+          - "CAD"
+      title: "Rates"
+    uptime:
+      args: [""]
+      cmd: "uptime"
+      enabled: true
+      position:
+        top: 5
+        left: 0
+        height: 1
+        width: 3
+      refreshInterval: 30
+      type: cmdrunner
+    textfile:
+      enabled: false
+      filePath: "~/.config/wtf/config.yml"
+      format: true
+      position:
+        top: 0
+        left: 0
+        height: 4
+        width: 1
+      refreshInterval: 30
+      wrapText: false

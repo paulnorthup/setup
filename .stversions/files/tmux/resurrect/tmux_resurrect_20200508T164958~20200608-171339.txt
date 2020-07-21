@@ -1,0 +1,52 @@
+pane	0	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	blog	1	:zsh	1	:*	1	:/Users/n/Documents/Publii/sites	1	zsh	:
+pane	github	1	:zsh	1	:*	1	:/Users/n	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/n/code/bb/hedwig	1	zsh	:
+pane	hedwig	1	:vim	1	:*	2	:/Users/n/code/bb/hedwig	0	zsh	:
+pane	lello	1	:bash	0	:#-Z	1	:/Users/n/code/bb/lello	0	.overmind-wrapp	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-6417-0/rc
+pane	lello	1	:bash	0	:#-Z	2	:/Users/n/code/bb/lello	0	node	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-10298-0/rc
+pane	lello	1	:bash	0	:#-Z	3	:/Users/n/code/bb/lello	0	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-7534-0/rc
+pane	lello	1	:bash	0	:#-Z	4	:/Users/n/code/bb/lello	1	ruby	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-58714-0/rc
+pane	lello	2	:work	1	:*Z	1	:/Users/n/code/bb/lello	1	zsh	:nvim
+pane	lello	2	:work	1	:*Z	2	:/Users/n/code/bb/lello	0	bash	:bash --rcfile /private/var/folders/_6/jf53z0r51773wt92y28p9bhw0000gn/T/nix-shell-87635-0/rc
+pane	lello	2	:work	1	:*Z	3	:/Users/n/code/bb/lello	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	1	:/Users/n	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/n	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	5	:/Users/n	0	zsh	:
+pane	notes	1	:vim	1	:*	1	:/Users/n	1	zsh	:
+pane	pulp	1	:ruby	1	:*	1	:/Users/n	0	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	2	:/Users/n	1	zsh	:
+pane	pulp	1	:ruby	1	:*	3	:/Users/n	0	zsh	:
+pane	pulp	1	:ruby	1	:*	4	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	1	:/Users/n	1	zsh	:
+pane	taft	1	:vim	1	:*	2	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	3	:/Users/n	0	zsh	:
+pane	taft	1	:vim	1	:*	4	:/Users/n	0	zsh	:
+pane	templater	1	:.overmind-wrapp	1	:*	1	:/Users/n/code/bb/templater	0	zsh	:
+pane	templater	1	:.overmind-wrapp	1	:*	2	:/Users/n/code/bb/templater	1	zsh	:
+pane	to	1	:node	1	:*	1	:/Users/n/Sync/TO/code/backend	1	zsh	:
+pane	to	1	:node	1	:*	2	:/Users/n/Sync/TO/code/frontend	0	zsh	:
+pane	to	1	:node	1	:*	3	:/Users/n/Sync/TO/code/frontend	0	zsh	:
+pane	to	2	:bash	0	:-	1	:/Users/n	1	zsh	:
+pane	url-shortener	1	:zsh	1	:*	1	:/Users/n/code/shlink	1	zsh	:
+pane	url-shortener	1	:zsh	1	:*	2	:/Users/n/code/shlink-web	0	zsh	:
+pane	valve	1	:bash	1	:*	1	:/Users/n	0	zsh	:
+pane	valve	1	:bash	1	:*	2	:/Users/n	1	zsh	:
+window	0	1	1	:*	c9fe,316x85,0,0,1
+window	blog	1	1	:*	c9ff,316x85,0,0,2
+window	github	1	1	:*	ca00,316x85,0,0,3
+window	hedwig	1	1	:*	b2cd,316x85,0,0{158x85,0,0,4,157x85,159,0,5}
+window	lello	1	0	:#-Z	2a43,158x85,0,0{75x85,0,0[75x43,0,0,6,75x41,0,44,7],82x85,76,0[82x43,76,0,8,82x41,76,44,9]}
+window	lello	2	1	:*Z	258f,161x47,0,0{82x47,0,0,10,78x47,83,0[78x24,83,0,11,78x22,83,25,12]}
+window	mockingjay	1	1	:*	61ad,316x85,0,0{158x85,0,0,13,157x85,159,0[157x22,159,0,14,157x20,159,23,15,157x21,159,44,16,157x19,159,66,17]}
+window	notes	1	1	:*	6537,316x85,0,0,18
+window	pulp	1	1	:*	2aff,316x85,0,0{119x85,0,0[119x43,0,0,19,119x41,0,44,20],196x85,120,0[196x43,120,0,21,196x41,120,44,22]}
+window	taft	1	1	:*	e886,316x85,0,0{158x85,0,0,23,157x85,159,0[157x22,159,0,24,157x40,159,23,25,157x21,159,64,26]}
+window	templater	1	1	:*	d740,316x85,0,0{158x85,0,0,27,157x85,159,0,28}
+window	to	1	1	:*	8b56,316x85,0,0{158x85,0,0,29,157x85,159,0[157x32,159,0,30,157x52,159,33,31]}
+window	to	2	0	:-	6532,316x85,0,0,32
+window	url-shortener	1	1	:*	573d,316x85,0,0{158x85,0,0,33,157x85,159,0,34}
+window	valve	1	1	:*	5327,316x85,0,0{157x85,0,0,35,158x85,158,0,36}
+state	lello	templater
