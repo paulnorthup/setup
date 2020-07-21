@@ -34,31 +34,12 @@ path=(
 export PATH=$path:$PATH
 
 ##Tokens
-[ -f ~/.tokens ] && source ~/.tokens
+export PASSWORD_STORE_DIR=~/.tokens/pass
+export GNUPGHOME=~/.tokens/gnupg
 
 # Editor
 export EDITOR='vim'
 alias vim='nvim'
-
-# NPM to path
-export PATH="/usr/local/share/npm/bin:$PATH"
-
-
-#Rust to path
-export PATH="/Users/northup/.cargo/env:$PATH"
-export PATH="/Users/northup/.cargo/bin:$PATH"
-
-# Add ruby to path
-export PATH="/usr/local/opt/ruby@2.5/bin:/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
-
-# Add sbin to path
-export PATH="/usr/local/sbin:$PATH"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-##Add flutter to path
-export PATH="~/code/pn/flutter/bin:$PATH"
 
 fpath=($fpath /usr/local/share/doc/task/scripts/zsh)
 autoload -Uz compinit
@@ -67,7 +48,6 @@ compinit
 #bookbub
 export BBWORKSPACE=~/code/bb
 export INTERNAL_API_USERNAME_STAGING="bookbub"
-export INTERNAL_API_PASSWORD_STAGING="Lv6QUVdbq5iYsWtXZ8w1"
 
 # marks
 export MARKPATH=$HOME/.marks
@@ -202,7 +182,6 @@ set_prompt
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/local/opt/node@10/bin:$PATH"
 
 export GOPATH=$HOME/golang
 export GOROOT=/usr/local/opt/go/libexec
@@ -214,7 +193,10 @@ source ~/.nix-profile/etc/profile.d/nix.sh
 export NIX_PATH=$NIX_PATH:bbpkgs=https://github.com/BookBub/nixpkgs/archive/19.07.0.1.tar.gz
 prompt_nix_shell_setup
 export ADMIN=true
-export HOMEBREW_GITHUB_API_TOKEN=09e8e12a7657f95c2047984c588b89c7317b0e86
+
+brew-token () {
+export HOMEBREW_GITHUB_API_TOKEN=$(pass show github.api.token)
+}
 
 eval "$(direnv hook zsh)"
 

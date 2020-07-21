@@ -17,3 +17,7 @@
         create: true
         path: git/gitignore_global
     ~/.gitignore_global: git/gitignore_global
+    ~/.tokens:
+        create: true
+        force: true
+        path: tokens
