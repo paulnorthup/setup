@@ -18,7 +18,6 @@ setopt autocd
 
 # Customize PATH
 path=(
-  $path
   /usr/local/bin
   /usr/bin
   /bin
@@ -195,7 +194,7 @@ prompt_nix_shell_setup
 export ADMIN=true
 
 brew-token () {
-export HOMEBREW_GITHUB_API_TOKEN=$(pass show github.api.token)
+export HOMEBREW_GITHUB_API_TOKEN=$(pass show homebrew.github.api.token)
 }
 
 eval "$(direnv hook zsh)"
