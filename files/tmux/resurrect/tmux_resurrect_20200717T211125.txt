@@ -1,0 +1,52 @@
+pane	0	1	:zsh	1	:*	1	:/Users/northup	1	zsh	:
+pane	blog	1	:zsh	1	:*	1	:/Users/northup	1	zsh	:
+pane	dash	1	:wtfutil	1	:*	1	:/Users/northup	0	zsh	:
+pane	dash	1	:wtfutil	1	:*	2	:/Users/northup	1	zsh	:
+pane	hedwig	1	:vim	1	:*	1	:/Users/northup	1	nvim	:nvim
+pane	hedwig	1	:vim	1	:*	2	:/Users/northup	0	zsh	:
+pane	hedwig	2	:bash	0	:-	1	:/Users/northup	1	zsh	:
+pane	lello	1	:bash	0	:-	1	:/Users/northup	0	zsh	:
+pane	lello	1	:bash	0	:-	2	:/Users/northup	0	zsh	:
+pane	lello	1	:bash	0	:-	3	:/Users/northup	0	zsh	:
+pane	lello	1	:bash	0	:-	4	:/Users/northup	1	zsh	:
+pane	lello	2	:zsh	1	:*	1	:/Users/northup	1	zsh	:
+pane	lello	2	:zsh	1	:*	2	:/Users/northup	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	1	:/Users/northup	0	nvim	:nvim
+pane	mockingjay	1	:vim	1	:*	2	:/Users/northup	1	zsh	:
+pane	mockingjay	1	:vim	1	:*	3	:/Users/northup	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	4	:/Users/northup	0	zsh	:
+pane	mockingjay	1	:vim	1	:*	5	:/Users/northup	0	zsh	:
+pane	nny	1	:zsh	1	:*	1	:/Users/northup/code/nny/tintme/application/webapp/tintme-frontend	1	nvim	:nvim
+pane	nny	2	:node	0	:-	1	:/Users/northup/code/nny/tintme/application/webapp/tintme-frontend	1	node	:ng serve  
+pane	notes	1	:vim	1	:*	1	:/Users/northup	1	nvim	:nvim
+pane	pulp	1	:ruby	1	:*	1	:/Users/northup	0	zsh	:
+pane	pulp	1	:ruby	1	:*	2	:/Users/northup	0	zsh	:
+pane	pulp	1	:ruby	1	:*	3	:/Users/northup	1	zsh	:
+pane	pulp	1	:ruby	1	:*	4	:/Users/northup	0	zsh	:
+pane	taft	1	:vim	1	:*	1	:/Users/northup	1	zsh	:
+pane	taft	1	:vim	1	:*	2	:/Users/northup	0	zsh	:
+pane	taft	1	:vim	1	:*	3	:/Users/northup	0	zsh	:
+pane	taft	1	:vim	1	:*	4	:/Users/northup	0	zsh	:
+pane	to	1	:node	1	:*	1	:/Users/northup	1	zsh	:
+pane	to	1	:node	1	:*	2	:/Users/northup	0	zsh	:
+pane	to	1	:node	1	:*	3	:/Users/northup	0	zsh	:
+pane	to	2	:bash	0	:-	1	:/Users/northup	1	zsh	:
+pane	valve	1	:bash	1	:*	1	:/Users/northup	0	zsh	:
+pane	valve	1	:bash	1	:*	2	:/Users/northup	1	zsh	:
+window	0	1	1	:*	b13d,134x41,0,0,0
+window	blog	1	1	:*	b13e,134x41,0,0,1
+window	dash	1	1	:*	8fdd,134x41,0,0{67x41,0,0,2,66x41,68,0,3}
+window	hedwig	1	1	:*	99c6,134x41,0,0{68x41,0,0,4,65x41,69,0,5}
+window	hedwig	2	0	:-	b143,134x41,0,0,6
+window	lello	1	0	:-	8a12,134x41,0,0{64x41,0,0[64x20,0,0,7,64x20,0,21,8],69x41,65,0[69x20,65,0,9,69x20,65,21,10]}
+window	lello	2	1	:*	cdfa,134x41,0,0{67x41,0,0,11,66x41,68,0,12}
+window	mockingjay	1	1	:*	a6d0,134x41,0,0{67x41,0,0,13,66x41,68,0[66x10,68,0,14,66x10,68,11,15,66x10,68,22,16,66x8,68,33,17]}
+window	nny	1	1	:*	5d07,202x53,0,0,18
+window	nny	2	0	:-	5d08,202x53,0,0,38
+window	notes	1	1	:*	d8cf,134x41,0,0,20
+window	pulp	1	1	:*	a493,134x41,0,0{29x41,0,0[29x20,0,0,21,29x20,0,21,22],104x41,30,0[104x20,30,0,23,104x20,30,21,24]}
+window	taft	1	1	:*	9241,134x41,0,0{67x41,0,0,25,66x41,68,0[66x7,68,0,26,66x26,68,8,27,66x6,68,35,28]}
+window	to	1	1	:*	ef91,134x41,0,0{67x41,0,0,29,66x41,68,0[66x10,68,0,30,66x30,68,11,31]}
+window	to	2	0	:-	58d2,134x41,0,0,32
+window	valve	1	1	:*	4992,134x41,0,0{66x41,0,0,33,67x41,67,0,34}
+state	nny	dash
