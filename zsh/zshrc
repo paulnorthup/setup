@@ -16,6 +16,9 @@ setopt autocd
 # Uncomment following line if you want red dots to be displayed while waiting for completion
  COMPLETION_WAITING_DOTS="true"
 
+# Default setup directory
+export SETUP_DIR=$HOME/setup
+
 # Customize PATH
 path=(
   /usr/local/bin
@@ -25,7 +28,9 @@ path=(
   /sbin
   /opt/X11/bin
   /usr/local/MacGPG2/bin
-  /usr/local/share/
+  /usr/local/share
+  $SETUP_DIR/bin
+  $HOME/setup/bin
   $HOME/.cargo/env
   $HOME/.cargo/bin
 )
@@ -35,6 +40,7 @@ export PATH=$path:$PATH
 ##Tokens
 export PASSWORD_STORE_DIR=~/.tokens/pass
 export GNUPGHOME=~/.tokens/gnupg
+export HOMEBREW_GITHUB_API_TOKEN=$(pass show homebrew.github.api.token)
 
 # Editor
 export EDITOR='vim'
@@ -193,9 +199,6 @@ export NIX_PATH=$NIX_PATH:bbpkgs=https://github.com/BookBub/nixpkgs/archive/19.0
 prompt_nix_shell_setup
 export ADMIN=true
 
-brew-token () {
-export HOMEBREW_GITHUB_API_TOKEN=$(pass show homebrew.github.api.token)
-}
 
 eval "$(direnv hook zsh)"
 
