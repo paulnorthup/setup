@@ -1,38 +1,48 @@
 >>$SETUP_DIR/brew/brew_cask_list
+>>$SETUP_DIR/brew/brew_package_list
+
+function setup_diffs {
+  BREW_PACKAGE_DIFF=$(mktemp -t tmp.XXXXXX)
+  brew list | comm -32 - $SETUP_DIR/brew/brew_package_list > $BREW_PACKAGE_DIFF
+
+  BREW_CASK_DIFF=$(mktemp -t tmp.XXXXXX)
+  brew cask list | comm -32 - $SETUP_DIR/brew/brew_cask_list > $BREW_CASK_DIFF
+}
+function tear_down_diffs {
+  rm $BREW_PACKAGE_DIFF
+  rm $BREW_CASK_DIFF
+}
+function install_diffs {
+  if [ -s "$BREW_PACKAGE_DIFF" ] 
+  then
+    echo "Let's get your packages in sync."
+    install_packages
+    update_package_list
+  fi
+  if [ -s "$BREW_PACKAGE_DIFF" ] 
+  then
+    echo "Let's get your casks in sync."
+    install_casks
+    update_cask_list
+  fi
+  echo "You're all up to date"
+}
+function install_packages {
+  cat $BREW_PACKAGE_DIFF | xargs brew install
+}
+function install_casks {
+  cat $BREW_CASK_DIFF | xargs brew cask install
+}
+function update_package_list {
+  sort $BREW_PACKAGE_DIFF $SETUP_DIR/brew/brew_package_list > $SETUP_DIR/brew/brew_package_list
+  brew list > $SETUP_DIR/brew/brew_package_list
+}
+function update_cask_list {
+  sort $BREW_CASK_DIFF $SETUP_DIR/brew/brew_cask_list > $SETUP_DIR/brew/brew_cask_list
+  brew cask list > $SETUP_DIR/brew/brew_cask_list
+}
 
 echo "Checking packages..."
-BREWDIFF=$(mktemp -t tmp.XXXXXX)
-
-brew list | comm -32 - $SETUP_DIR/brew/brew_package_list > $BREWDIFF
-
-[ ! -f "$BREWDIFF" ] && { echo "Error: Diff file not found."; exit 2; }
- 
-if [ -s "$_file" ] 
-then
-	echo "Let's get in sync."
-  cat $BREWDIFF | xargs brew install
-else
-	echo "You're all up to date"
-fi
-
-sort $BREWDIFF $SETUP_DIR/brew/brew_package_list > $SETUP_DIR/brew/brew_package_list
-rm $BREWDIFF
-
-echo "Checking casks..."
-BREWDIFF=$(mktemp -t tmp.XXXXXX)
-
-brew cask list | comm -32 - $SETUP_DIR/brew/brew_cask_list > $BREWDIFF
-
-[ ! -f "$BREWDIFF" ] && { echo "Error: Diff file not found."; exit 2; }
- 
-if [ -s "$_file" ] 
-then
-	echo "Let's get in sync."
-  cat $BREWDIFF | xargs brew cask install
-else
-	echo "You're all up to date"
-fi
-
-sort $BREWDIFF $SETUP_DIR/brew/brew_cask_list > $SETUP_DIR/brew/brew_cask_list
-
-rm $BREWDIFF
+setup_diffs
+install_diffs
+tear_down_diffs
