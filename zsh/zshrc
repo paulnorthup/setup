@@ -97,6 +97,11 @@ alias eject='osascript -e "tell application \"Finder\" to eject (every disk whos
 # Open Apps
 alias shop='open -b com.adobe.Photoshop'
 
+# Python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Rails
 alias rs='bin/rails server'
 alias rake='bin/rake'
@@ -203,3 +208,4 @@ export ADMIN=true
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --ignore node_modules -g ""'

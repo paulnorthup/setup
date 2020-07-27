@@ -13,7 +13,6 @@ set rtp+=/usr/local/opt/fzf
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" My plugins
 " Syntax
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'vimwiki/vimwiki'
@@ -31,11 +30,22 @@ Plugin 'othree/yajs'
 Plugin 'mxw/vim-jsx'
 Plugin 'fleischie/vim-styled-components'
 Plugin 'isRuslan/vim-es6'
+Plugin 'ternjs/tern_for_vim'
 
 Plugin 'tpope/vim-rails'
 Plugin 'thoughtbot/vim-rspec'
 
 Plugin 'stephpy/vim-yaml'
+
+"AutoComplete
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 
 "file helpers
@@ -43,8 +53,12 @@ Plugin 'dense-analysis/ale'
 Plugin 'pechorin/any-jump.vim'
 Plugin 'tpope/vim-surround'
 
+" Tags
+Plugin 'ludovicchabant/vim-gutentags'
+
 "Send commands
 Plugin 'jgdavey/tslime.vim'
+Plugin 'skywind3000/asyncrun.vim'
 
 "Math
 Plugin 'sk1418/HowMuch'
@@ -92,7 +106,17 @@ filetype plugin on
 filetype plugin indent on
 au BufRead,BufNewFile *.scss set filetype=scss
 set textwidth=80
-"Ale
+
+" formatters
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
+
+
+" linting and AutoComplete
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <C-k> <Plug>(ale_previous_wrap)
@@ -100,28 +124,43 @@ nmap <C-j> <Plug>(ale_next_wrap)
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_sign_column_always = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+
+let g:ale_linters = {
+\ 'python': ['flake8', 'pylint'],
+\ 'javascript': ['eslint'],
+\ 'vue': ['eslint']
 \}
+
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'typescript': ['prettier', 'tslint'],
+\  'vue': ['eslint'],
+\  'scss': ['prettier'],
+\  'html': ['prettier'],
+\  'reason': ['refmt']
+\}
+let g:ale_fix_on_save = 1
+
+let g:tern_request_timeout = 1
+let g:tern_request_timeout = 6000
+
+"STATUS LINE
+" always display status line
+set laststatus=2
 
 " clear the statusline for when vimrc is reloaded
 set statusline=   
-" lint warnings
-set statusline+=%#warningmsg#                 
 " buffer number
 set statusline+=%-3.3n\                       
 " flags
 set statusline+=%h%m%r%w                      
 " file name
 set statusline+=%t\                           
-" line:column
-set statusline+=%l:%c\ 
-
-set statusline+=%<\
 
 " right align
 set statusline+=%=
+" line:column
+set statusline+=%l:%c\ 
 "start file meta group
 set statusline+=[
 " filetype
@@ -130,29 +169,6 @@ set statusline+=%{strlen(&ft)?&ft:'none'},
 set statusline+=%{strlen(&fenc)?&fenc:&enc},  
 " end file meta group
 set statusline+=]\ 
-"file path
-set statusline+=%F\ 
-" pathogen info
-set statusline+=\ %.12{fugitive#statusline()}
-" highlight vim-rspec mappings
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  
-" always display status line
-set laststatus=2
-
-" status bar colors
-au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
-au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-
-hi User1 ctermfg=007 ctermbg=239 guibg=#4e4e4e guifg=#adadad
-hi User2 ctermfg=007 ctermbg=236 guibg=#303030 guifg=#adadad
-hi User3 ctermfg=236 ctermbg=236 guibg=#303030 guifg=#303030
-hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
-
-
-nmap <leader>st :SyntasticToggleMode<CR>
-nmap <leader>sc :SyntasticCheck<CR>
-nmap <leader>sf :SyntasticCheck --fix<CR>
 
 " enable eslint
 let g:syntastic_javascript_checkers = ['eslint']
@@ -246,7 +262,6 @@ let g:vimwiki_list = [
 
 let vimwiki_folding = 'list'
 setlocal foldmethod=syntax
-setlocal foldenable
 
 " insert date
 nmap <leader>id :put =strftime('%b %d, %Y')
