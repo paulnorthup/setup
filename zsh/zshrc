@@ -6,7 +6,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle git@github.com:spwhitt/nix-zsh-completions.git
 
 antigen apply
-plugins=(git heroku pip lein command-not-found tmux)
+plugins=(ssh-agent git heroku pip lein command-not-found tmux)
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -41,8 +41,6 @@ export PATH=$path:$PATH
 export PASSWORD_STORE_DIR=~/.tokens/pass
 export GNUPGHOME=~/.tokens/gnupg
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show homebrew.github.api.token)
-export GPG_TTY=$(tty)
-
 
 ##Pass
 PASSWORD_STORE_ENABLE_EXTENSIONS=true
